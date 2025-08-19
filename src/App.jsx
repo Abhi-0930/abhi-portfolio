@@ -623,6 +623,12 @@ const Projects = () => {
 const Experience = () => {
   const experiences = [
     {
+      company: "GirlScript Summer of Code 2025",
+      role: "Open Source Contributor",
+      duration: "July 2025 – Present",
+      description: "Contributing to community-driven open-source projects under GSSoC '25. Implementing features, fixing bugs, improving documentation and accessibility, and collaborating through code reviews using Full Stack Development."
+    },
+    {
       company: "Coding Cubs",
       role: "Design Team Lead",
       duration: "Aug 2024 – Jan 2025",
