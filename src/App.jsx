@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Download, ExternalLink, Github, Linkedin, Mail, Phone, MapPin, Code, Database, Shield, Brain, Award, Calendar, ArrowRight, Menu, X, Server } from 'lucide-react';
-import project1 from './assets/Project1.png'
-import project2 from './assets/Project2.jpg'
-import project3 from './assets/Project3.png'
-import project4 from './assets/Project4.png'
+import { ChevronDown, Download, ExternalLink, Github, Linkedin, Mail, Phone, MapPin, Code, Database, Shield, Brain, Award, Calendar, ArrowRight, Menu, X, Server, Briefcase, Users } from 'lucide-react';
 import resume from './assets/MyResume.pdf'
-import myimg from './assets/myimg.png'
+import myimg from './assets/myimg.jpg'
+// Project images
+import empathyAI from './assets/mht-1.png'
+import biteBuzz from './assets/bite-buzz-1.png'
+import drugToxicity from './assets/drug-toxicity.png'
+import cardioGuard from './assets/cg-2.png'
+import neuroScan from './assets/alzhemier-1.png'
+import luxeStore from './assets/luxe-store.png'
+import blogSpark from './assets/blogspark.png'
+import wisdomAI from './assets/wisdom ai.png'
+import resumeAI from './assets/resumeai.png'
+import ideaForge from './assets/ideaforge.png'
+import aeroLink from './assets/aerolink.png'
 
 // Hero Section Component
 const Hero = () => {
@@ -21,7 +29,7 @@ const Hero = () => {
     "AI Tools Expert"
   ];
 
-  const targetCounts = { projects: 50, experience: 1, technologies: 15 };
+  const targetCounts = { projects: 50, experience: 1, technologies: 25 };
 
   useEffect(() => {
     setIsVisible(true);
@@ -192,14 +200,14 @@ const About = () => {
             About Me
           </h2>
           
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Professional Photo */}
-            <div className="relative">
+            <div className="relative mt-12 lg:mt-6">
               <div className="relative z-10">
                 <img 
                   src= {myimg} 
                   alt="Abhishek - Full Stack Developer"
-                  className="w-full h-[500px] object-cover rounded-2xl shadow-2xl"
+                  className="w-full h-[600px] object-cover rounded-2xl shadow-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent rounded-2xl"></div>
               </div>
@@ -215,13 +223,13 @@ const About = () => {
                   Passionate Developer & Problem Solver
                 </h3>
                 <p className="text-lg text-slate-600 leading-relaxed">
-                  I'm a passionate Full Stack Developer with hands-on expertise in building dynamic and scalable web applications using the MERN stack and Next.js. I enjoy developing clean, responsive UIs and secure backend systems that deliver real value to users.
+                I’m a passionate Full Stack Developer who loves turning ideas into scalable, real-world web solutions. I work mainly with the MERN stack and Next.js, focusing on building clean, responsive UIs and secure backend systems that actually make an impact.
                 </p>
                 <p className="text-lg text-slate-600 leading-relaxed">
-                  With a strong foundation in cybersecurity, I bring a security-first approach to everything I build, ensuring both performance and protection. My journey in tech started with curiosity and has evolved into a passion for creating impactful solutions.
+                With a solid background in cybersecurity, I take a security-first approach to everything I build — making sure applications are not just fast, but also reliable and safe.
                 </p>
                 <p className="text-lg text-slate-600 leading-relaxed">
-                  Alongside academics, I'm actively involved in startup-driven product development, where I've contributed to building platforms that solve real-world problems — from AI-powered solutions to educational tools. I'm driven by collaboration and a desire to create tech that bridges ideas with execution.
+                Beyond academics, I’ve been deeply involved in startup-driven product development, contributing to platforms that solve real problems — from AI-powered tools to educational web solutions. I enjoy collaboration, problem-solving, and creating tech that bridges ideas with execution.
                 </p>
               </div>
               
@@ -472,36 +480,103 @@ const Skills = () => {
 const Projects = () => {
   const projects = [
     {
-      title: "SAAS Application",
-      description: "Smart to-do app with task tracking, auth, and billing — built with Next.js and integrated with Clerk & Stripe.",
-      tech: ["Next.js", "Prisma", "Stripe", "Clerk"],
-      image: project1,
-      github: "https://github.com/Abhi-0930/saas-template",
+      title: "Empathy AI - AI-Powered Multimodal Mental Health Therapy Chatbot",
+      description: "Advanced mental health support platform with AI-powered chatbot, multimodal therapy sessions, mood tracking, and personalized wellness recommendations.",
+      tech: ["AI Therapy", "Multimodal", "Mental Health", "Wellness Platform"],
+      image: empathyAI,
+      github: "#",
+      live: "#",
       category: "Full Stack"
     },
     {
-      title: "AI Mental Health Therapy Bot",
-      description: "An AI-driven mental health therapy bot that uses facial and voice analysis for emotional support. I contributed as the web and security developer, handling the frontend, integrating with backend APIs, and ensuring secure implementation and data protection.",
-      tech: ["Generative AI", "Flask", "NLP", "MERN Stack"],
-        image: project2,
-        github: "https://github.com/Abhi-0930/mental-health-therapy-bot",
-      category: "AI & Security"
+      title: "Bite Buzz - Full Stack Food Delivery Platform",
+      description: "Complete food delivery ecosystem with restaurant management, real-time order tracking, payment processing, and customer mobile app with admin dashboard.",
+      tech: ["Food Delivery", "Real-time Tracking", "Payment Gateway", "Admin Dashboard"],
+      image: biteBuzz,
+      github: "#",
+      live: "#",
+      category: "Full Stack"
     },
     {
-      title: "Food Delivery Website",
-      description: "A full-stack food delivery platform with user and admin panels, secure payments, authentication, and real-time order management — built using the MERN stack and Stripe.",
-      tech: ["React.js", "Stripe", "MongoDB", "Tailwind CSS", "Node.js", "Express.js"],
-      image: project3,
-      github: "https://github.com/Abhi-0930/mern-food-delivery",
-      category: "Web App"
+      title: "Drug Toxicity Predictor — AI Health Risk Analysis",
+      description: "End-to-end full stack system for predicting drug toxicity using machine learning and FastAPI — helping healthcare researchers analyze chemical compounds.",
+      tech: ["ML/AI", "FastAPI", "Python", "Healthcare"],
+      image: drugToxicity,
+      github: "#",
+      live: "#",
+      category: "Full Stack"
     },
     {
-      title: "AI Resume Builder",
-      description: "AI-powered resume builder that generates personalized, ATS-friendly content using Gemini API. Includes real-time preview, content suggestions, and a clean UI built with React and Tailwind.",
-      tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Gemini API"],
-      image: project4,
-      github: "https://github.com/Abhi-0930/AI-Resume-Builder.git",
-      category: "AI/Web App"
+      title: "CardioGuard — AI Heart Attack Risk Prediction",
+      description: "Smart health assessment web app combining ML prediction, Gemini AI, and visual analytics for personalized heart attack risk assessment and therapy plans.",
+      tech: ["ML/AI", "Gemini API", "Healthcare", "React"],
+      image: cardioGuard,
+      github: "#",
+      live: "#",
+      category: "Full Stack"
+    },
+    {
+      title: "NeuroScan AI — Alzheimer's Detection & Support Platform",
+      description: "AI-powered web platform for Alzheimer's prediction from MRI scans, medical insights via Gemini AI, and local doctor discovery using geolocation services.",
+      tech: ["TensorFlow", "Django", "FastAPI", "Gemini API", "PostgreSQL"],
+      image: neuroScan,
+      github: "#",
+      live: "#",
+      category: "Full Stack"
+    },
+    {
+      title: "LuxeStore — Full-Stack E-Commerce Platform",
+      description: "Modern, scalable shopping platform with Google OAuth authentication, dynamic filtering, real-time cart, Stripe payments, and order tracking.",
+      tech: ["React", "Redux", "Node.js", "MongoDB", "Stripe API", "Material UI"],
+      image: luxeStore,
+      github: "#",
+      live: "#",
+      category: "Full Stack"
+    },
+    {
+      title: "BlogSpark - AI Blog Idea Generator",
+      description: "AI-powered blog idea generator that helps content creators brainstorm creative topics and save favorite ideas for future reference.",
+      tech: ["AI Integration", "React", "Node.js", "Content Generation"],
+      image: blogSpark,
+      github: "#",
+      live: "#",
+      category: "Automation & AI"
+    },
+    {
+      title: "Wisdom AI - AI Quote Generator",
+      description: "Daily dose of AI-powered inspiration with categorized quote generation system for motivation and wisdom sharing.",
+      tech: ["AI API", "React", "Backend", "Quote System"],
+      image: wisdomAI,
+      github: "#",
+      live: "#",
+      category: "Automation & AI"
+    },
+    {
+      title: "Resume AI - AI Resume Builder",
+      description: "Complete AI-powered resume tailoring system with PDF export, job description matching, and professional formatting.",
+      tech: ["AI Tailoring", "PDF Export", "Next.js", "Resume Builder"],
+      image: resumeAI,
+      github: "#",
+      live: "#",
+      category: "Automation & AI"
+    },
+    {
+      title: "IdeaForge AI - Startup Idea Finder",
+      description: "AI-powered startup idea generator that transforms personal interests into innovative business concepts and entrepreneurial opportunities.",
+      tech: ["AI Innovation", "Startup Tools", "Idea Generation", "Business"],
+      image: ideaForge,
+      github: "#",
+      live: "#",
+      category: "Automation & AI"
+    },
+    {
+      title: "AeroLink — 3D Product Launch Website",
+      description: "Immersive 3D web experience for next-gen wireless audio technology with interactive product showcase, cinematic animations, and performance optimization.",
+      tech: ["3D Web Design", "Three.js", "Next.js", "Interactive UI"],
+      image: aeroLink,
+      github: "#",
+      live: "#",
+      category: "Website Design"
     }
   ];
 
@@ -538,17 +613,30 @@ const Projects = () => {
                   </span>
                 </div>
                 
-                {/* GitHub Link Overlay */}
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <a 
-                    href={project.github} 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-white text-slate-800 px-6 py-3 rounded-xl font-semibold hover:bg-slate-100 transition-colors duration-300 flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
-                  >
-                    <Github size={20} />
-                    View Code
-                  </a>
+                {/* Links Overlay */}
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                  {project.github && project.github !== "#" && (
+                    <a 
+                      href={project.github} 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white text-slate-800 px-6 py-3 rounded-xl font-semibold hover:bg-slate-100 transition-colors duration-300 flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+                    >
+                      <Github size={20} />
+                      View Code
+                    </a>
+                  )}
+                  {project.live && project.live !== "#" && (
+                    <a 
+                      href={project.live} 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white text-slate-800 px-6 py-3 rounded-xl font-semibold hover:bg-slate-100 transition-colors duration-300 flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+                    >
+                      <ExternalLink size={20} />
+                      Live Demo
+                    </a>
+                  )}
                 </div>
               </div>
               
@@ -570,18 +658,34 @@ const Projects = () => {
                   ))}
                 </div>
                 
-                {/* GitHub Link */}
+                {/* Links */}
                 <div className="flex items-center justify-between">
-                  <a 
-                    href={project.github} 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-slate-700 hover:text-blue-600 transition-colors duration-300 font-medium group/link"
-                  >
-                    <Github size={18} className="group-hover/link:scale-110 transition-transform duration-300" />
-                    <span>View on GitHub</span>
-                    <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform duration-300" />
-                  </a>
+                  <div className="flex items-center gap-4">
+                    {project.github && project.github !== "#" && (
+                      <a 
+                        href={project.github} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-slate-700 hover:text-blue-600 transition-colors duration-300 font-medium group/link"
+                      >
+                        <Github size={18} className="group-hover/link:scale-110 transition-transform duration-300" />
+                        <span>GitHub</span>
+                        <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform duration-300" />
+                      </a>
+                    )}
+                    {project.live && project.live !== "#" && (
+                      <a 
+                        href={project.live} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-slate-700 hover:text-purple-600 transition-colors duration-300 font-medium group/link"
+                      >
+                        <ExternalLink size={18} className="group-hover/link:scale-110 transition-transform duration-300" />
+                        <span>Live Demo</span>
+                        <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform duration-300" />
+                      </a>
+                    )}
+                  </div>
                   
                   <div className="flex items-center gap-1 text-slate-400">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -664,6 +768,131 @@ const Experience = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Freelancing & Mentoring Section Component
+const Freelancing = () => {
+  return (
+    <section id="freelancing" className="py-20 bg-slate-50">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-slate-800 mb-4">
+            Freelancing & Mentoring
+          </h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            Empowering clients and students through professional web development services and comprehensive technical training.
+          </p>
+        </div>
+        
+        <div className="max-w-5xl mx-auto">
+          {/* Main Card */}
+          <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 md:p-10">
+            {/* Header */}
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
+              <div className="flex items-center gap-4 mb-4 md:mb-0">
+                <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-4 rounded-xl shadow-lg">
+                  <Briefcase className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-slate-800">
+                    Freelance Web Developer & Mentor
+                  </h3>
+                  <div className="flex items-center gap-2 mt-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-purple-600 font-semibold">Ongoing</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Description */}
+            <div className="space-y-6 mb-8">
+              <p className="text-lg text-slate-600 leading-relaxed">
+                I work as a freelance web developer and cybersecurity trainer, providing professional web development services to both local and international clients. I specialize in building full-stack web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js) with a strong focus on performance, scalability, and security.
+              </p>
+              
+              <p className="text-lg text-slate-600 leading-relaxed">
+                My freelance projects have involved developing secure authentication systems, API integrations, and real-time features like live order tracking and chat functionalities. I've also managed an affiliate marketing business called Arihs Tour, where I integrated flight-booking APIs from platforms such as Trip.com to automate and scale online ticket sales.
+              </p>
+              
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Alongside development, I serve as a trainer and mentor, having guided <span className="font-semibold text-blue-600">30+ students</span> in cybersecurity and full-stack web development. My mentorship focuses on helping learners understand real-world concepts, improve their practical coding skills, and gain confidence in building projects independently.
+              </p>
+            </div>
+            
+            {/* Key Highlights */}
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border border-blue-100">
+                <div className="flex items-start gap-3">
+                  <div className="bg-blue-500 p-2 rounded-lg mt-1">
+                    <Briefcase className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-800 mb-2">Professional Development</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      Building secure, scalable full-stack applications for clients worldwide with focus on authentication, real-time features, and API integrations.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-100">
+                <div className="flex items-start gap-3">
+                  <div className="bg-purple-500 p-2 rounded-lg mt-1">
+                    <Users className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-800 mb-2">Training & Mentorship</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      Guided 30+ students in cybersecurity and web development, focusing on practical skills and independent project building.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Skills & Technologies */}
+            <div className="bg-gradient-to-r from-slate-50 to-blue-50 p-6 rounded-xl">
+              <h4 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+                <Code className="w-5 h-5 text-purple-600" />
+                Key Skills & Technologies
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  'React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT Authentication',
+                  'REST APIs', 'Stripe Payments', 'Socket.io', 'Figma', 'Docker',
+                  'Git', 'Cybersecurity (OWASP)', 'Ethical Hacking', 'SOC Operations'
+                ].map((skill, index) => (
+                  <span 
+                    key={index}
+                    className="bg-white text-blue-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm border border-blue-100 hover:shadow-md hover:scale-105 transition-all duration-300"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          {/* Stats Cards */}
+          <div className="grid md:grid-cols-3 gap-6 mt-8">
+            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center">
+              <div className="text-4xl font-bold text-blue-600 mb-2">30+</div>
+              <div className="text-slate-600 font-medium">Students Mentored</div>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center">
+              <div className="text-4xl font-bold text-purple-600 mb-2">Multiple</div>
+              <div className="text-slate-600 font-medium">Client Projects</div>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center">
+              <div className="text-4xl font-bold text-pink-600 mb-2">MERN</div>
+              <div className="text-slate-600 font-medium">Stack Specialist</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1060,6 +1289,7 @@ const Navigation = () => {
     { href: '#skills', label: 'Skills' },
     { href: '#projects', label: 'Projects' },
     { href: '#experience', label: 'Experience' },
+    { href: '#freelancing', label: 'Freelancing' },
     { href: '#achievements', label: 'Achievements' },
     { href: '#contact', label: 'Contact' }
   ];
@@ -1160,6 +1390,7 @@ const App = () => {
       <Skills />
       <Projects />
       <Experience />
+      <Freelancing />
       <Achievements />
       <Contact />
     </div>
