@@ -482,7 +482,7 @@ const Projects = () => {
     {
       title: "Empathy AI - AI-Powered Multimodal Mental Health Therapy Chatbot",
       description: "Advanced mental health support platform with AI-powered chatbot, multimodal therapy sessions, mood tracking, and personalized wellness recommendations.",
-      tech: ["AI Therapy", "Multimodal", "Mental Health", "Wellness Platform"],
+      tech: ["LLM", "DL", "CNN", "OpenAI", "React", "Node", "MongoDB", "Flask", "Python", "FastAPI", "Tailwind CSS"],
       image: empathyAI,
       github: "#",
       live: "#",
@@ -491,7 +491,7 @@ const Projects = () => {
     {
       title: "Bite Buzz - Full Stack Food Delivery Platform",
       description: "Complete food delivery ecosystem with restaurant management, real-time order tracking, payment processing, and customer mobile app with admin dashboard.",
-      tech: ["Food Delivery", "Real-time Tracking", "Payment Gateway", "Admin Dashboard"],
+      tech: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Stripe API"],
       image: biteBuzz,
       github: "#",
       live: "#",
@@ -500,7 +500,7 @@ const Projects = () => {
     {
       title: "Drug Toxicity Predictor — AI Health Risk Analysis",
       description: "End-to-end full stack system for predicting drug toxicity using machine learning and FastAPI — helping healthcare researchers analyze chemical compounds.",
-      tech: ["ML/AI", "FastAPI", "Python", "Healthcare"],
+      tech: ["HTML", "CSS", "JavaScript", "Python", "FastAPI", "Scikit-learn", "Pandas", "NumPy"],
       image: drugToxicity,
       github: "#",
       live: "#",
@@ -509,7 +509,7 @@ const Projects = () => {
     {
       title: "CardioGuard — AI Heart Attack Risk Prediction",
       description: "Smart health assessment web app combining ML prediction, Gemini AI, and visual analytics for personalized heart attack risk assessment and therapy plans.",
-      tech: ["ML/AI", "Gemini API", "Healthcare", "React"],
+      tech: ["React.js", "Recharts", "Tailwind CSS", "Node.js", "Express.js", "Flask", "FastAPI", "MongoDB", "Python", "Scikit-learn", "Pandas", "NumPy", "Gemini API"],
       image: cardioGuard,
       github: "#",
       live: "#",
@@ -518,7 +518,7 @@ const Projects = () => {
     {
       title: "NeuroScan AI — Alzheimer's Detection & Support Platform",
       description: "AI-powered web platform for Alzheimer's prediction from MRI scans, medical insights via Gemini AI, and local doctor discovery using geolocation services.",
-      tech: ["TensorFlow", "Django", "FastAPI", "Gemini API", "PostgreSQL"],
+      tech: ["HTML", "CSS", "JavaScript", "Django", "FastAPI", "TensorFlow", "Keras", "NumPy", "Gemini API", "PostgreSQL"],
       image: neuroScan,
       github: "#",
       live: "#",
@@ -527,7 +527,7 @@ const Projects = () => {
     {
       title: "LuxeStore — Full-Stack E-Commerce Platform",
       description: "Modern, scalable shopping platform with Google OAuth authentication, dynamic filtering, real-time cart, Stripe payments, and order tracking.",
-      tech: ["React", "Redux", "Node.js", "MongoDB", "Stripe API", "Material UI"],
+      tech: ["React.js", "Redux Toolkit", "Tailwind CSS", "Material UI", "Node.js", "Express.js", "MongoDB", "Google OAuth", "JWT", "Stripe API", "Vercel", "Render"],
       image: luxeStore,
       github: "#",
       live: "#",
@@ -536,7 +536,7 @@ const Projects = () => {
     {
       title: "BlogSpark - AI Blog Idea Generator",
       description: "AI-powered blog idea generator that helps content creators brainstorm creative topics and save favorite ideas for future reference.",
-      tech: ["AI Integration", "React", "Node.js", "Content Generation"],
+      tech: ["Next.js", "MongoDB", "Tailwind CSS", "Vercel", "Gemini API"],
       image: blogSpark,
       github: "#",
       live: "#",
@@ -545,7 +545,7 @@ const Projects = () => {
     {
       title: "Wisdom AI - AI Quote Generator",
       description: "Daily dose of AI-powered inspiration with categorized quote generation system for motivation and wisdom sharing.",
-      tech: ["AI API", "React", "Backend", "Quote System"],
+      tech: ["Next.js", "MongoDB", "Tailwind CSS", "Vercel", "Gemini API"],
       image: wisdomAI,
       github: "#",
       live: "#",
@@ -554,7 +554,7 @@ const Projects = () => {
     {
       title: "Resume AI - AI Resume Builder",
       description: "Complete AI-powered resume tailoring system with PDF export, job description matching, and professional formatting.",
-      tech: ["AI Tailoring", "PDF Export", "Next.js", "Resume Builder"],
+      tech: ["Next.js", "MongoDB", "Tailwind CSS", "Vercel", "OpenAI API"],
       image: resumeAI,
       github: "#",
       live: "#",
@@ -563,7 +563,7 @@ const Projects = () => {
     {
       title: "IdeaForge AI - Startup Idea Finder",
       description: "AI-powered startup idea generator that transforms personal interests into innovative business concepts and entrepreneurial opportunities.",
-      tech: ["AI Innovation", "Startup Tools", "Idea Generation", "Business"],
+      tech: ["Next.js", "MongoDB", "Tailwind CSS", "Vercel", "Gemini API"],
       image: ideaForge,
       github: "#",
       live: "#",
@@ -572,7 +572,7 @@ const Projects = () => {
     {
       title: "AeroLink — 3D Product Launch Website",
       description: "Immersive 3D web experience for next-gen wireless audio technology with interactive product showcase, cinematic animations, and performance optimization.",
-      tech: ["3D Web Design", "Three.js", "Next.js", "Interactive UI"],
+      tech: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Three.js (3D WebGL)"],
       image: aeroLink,
       github: "#",
       live: "#",
@@ -813,45 +813,36 @@ const Freelancing = () => {
             {/* Description */}
             <div className="space-y-6 mb-8">
               <p className="text-lg text-slate-600 leading-relaxed">
-                I work as a freelance web developer and cybersecurity trainer, providing professional web development services to both local and international clients. I specialize in building full-stack web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js) with a strong focus on performance, scalability, and security.
+                As a Freelance Web Developer and Cybersecurity Trainer, I deliver professional web solutions and mentorship to clients and learners across the globe. I specialize in building secure, scalable full-stack applications using the MERN stack (MongoDB, Express.js, React.js, Node.js) with a strong focus on performance, reliability, and security.
               </p>
               
               <p className="text-lg text-slate-600 leading-relaxed">
-                My freelance projects have involved developing secure authentication systems, API integrations, and real-time features like live order tracking and chat functionalities. I've also managed an affiliate marketing business called Arihs Tour, where I integrated flight-booking APIs from platforms such as Trip.com to automate and scale online ticket sales.
+                My freelance work includes developing authentication systems, real-time applications, and API-driven platforms featuring live order tracking, chat functionality, and secure payment integrations. I also founded and managed Arihs Tour, an affiliate-based flight booking platform where I integrated Trip.com APIs to automate ticket sales and streamline booking workflows.
               </p>
               
               <p className="text-lg text-slate-600 leading-relaxed">
-                Alongside development, I serve as a trainer and mentor, having guided <span className="font-semibold text-blue-600">30+ students</span> in cybersecurity and full-stack web development. My mentorship focuses on helping learners understand real-world concepts, improve their practical coding skills, and gain confidence in building projects independently.
+                In parallel, I've mentored over <span className="font-semibold text-blue-600">30 students</span> in cybersecurity and full-stack development, guiding them through real-world projects, hands-on exercises, and problem-solving approaches that build both technical skill and confidence.
               </p>
             </div>
             
-            {/* Key Highlights */}
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border border-blue-100">
+            {/* Professional Focus */}
+            <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border border-blue-100 mb-8">
+              <h4 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+                <Brain className="w-5 h-5 text-purple-600" />
+                Professional Focus
+              </h4>
+              <div className="space-y-3">
                 <div className="flex items-start gap-3">
-                  <div className="bg-blue-500 p-2 rounded-lg mt-1">
-                    <Briefcase className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-800 mb-2">Professional Development</h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">
-                      Building secure, scalable full-stack applications for clients worldwide with focus on authentication, real-time features, and API integrations.
-                    </p>
-                  </div>
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                  <p className="text-slate-700 leading-relaxed">
+                    Building secure, high-performance full-stack applications with real-time features and API integrations.
+                  </p>
                 </div>
-              </div>
-              
-              <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-100">
                 <div className="flex items-start gap-3">
-                  <div className="bg-purple-500 p-2 rounded-lg mt-1">
-                    <Users className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-800 mb-2">Training & Mentorship</h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">
-                      Guided 30+ students in cybersecurity and web development, focusing on practical skills and independent project building.
-                    </p>
-                  </div>
+                  <div className="w-2 h-2 bg-purple-500 rounded-full mt-2"></div>
+                  <p className="text-slate-700 leading-relaxed">
+                    Providing hands-on mentorship in cybersecurity, OWASP fundamentals, and practical web development.
+                  </p>
                 </div>
               </div>
             </div>
@@ -864,9 +855,9 @@ const Freelancing = () => {
               </h4>
               <div className="flex flex-wrap gap-2">
                 {[
-                  'React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT Authentication',
-                  'REST APIs', 'Stripe Payments', 'Socket.io', 'Figma', 'Docker',
-                  'Git', 'Cybersecurity (OWASP)', 'Ethical Hacking', 'SOC Operations'
+                  'React.js', 'Node.js', 'Express.js', 'MongoDB', 'Next.js', 'JWT Authentication',
+                  'REST APIs', 'Socket.io', 'Stripe Payments', 'Figma', 'Docker',
+                  'Git/GitHub', 'Cybersecurity (OWASP)', 'Ethical Hacking', 'SOC Operations'
                 ].map((skill, index) => (
                   <span 
                     key={index}
