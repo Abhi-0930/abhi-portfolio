@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Download, ExternalLink, Github, Linkedin, Mail, Phone, MapPin, Code, Database, Shield, Brain, Award, Calendar, ArrowRight, Menu, X, Server, Briefcase, Users, Monitor, Wrench, Lock, FileCode, Globe, Key, Cloud, Terminal, Layers } from 'lucide-react';
-import { SiReact, SiNextdotjs, SiJavascript, SiHtml5, SiCss3, SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiGit, SiGithub, SiPostman, SiLinux, SiDocker, SiInstagram } from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiJavascript, SiHtml5, SiCss3, SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiGit, SiGithub, SiPostman, SiLinux, SiDocker } from 'react-icons/si';
 import resume from './assets/MyResume.pdf'
 import myimg from './assets/myimg.jpg'
 
@@ -815,6 +815,12 @@ const Contact = () => {
                 </h3>
                 <div className="flex flex-wrap gap-4">
                   <a 
+                    href="tel:+916302160783" 
+                    className="group bg-[#25d366] hover:bg-[#20ba5a] p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md"
+                  >
+                    <Phone className="w-6 h-6 text-white group-hover:animate-pulse" />
+                  </a>
+                  <a 
                     href="https://www.linkedin.com/in/abhishek-jujjuvarapu-556899276" 
                     target="_blank"
                     rel="noopener noreferrer"
@@ -835,20 +841,6 @@ const Contact = () => {
                     className="group bg-[#ea4335] hover:bg-[#d33b2c] p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md"
                   >
                     <Mail className="w-6 h-6 text-white group-hover:animate-pulse" />
-                  </a>
-                  <a 
-                    href="tel:+916302160783" 
-                    className="group bg-[#25d366] hover:bg-[#20ba5a] p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md"
-                  >
-                    <Phone className="w-6 h-6 text-white group-hover:animate-pulse" />
-                  </a>
-                  <a 
-                    href="#" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group bg-gradient-to-r from-[#f09433] via-[#e6683c] to-[#dc2743] hover:from-[#e0852a] hover:via-[#d55a2f] hover:to-[#c7223a] p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md"
-                  >
-                    <SiInstagram className="w-6 h-6 text-white group-hover:animate-pulse" />
                   </a>
                 </div>
               </div>
