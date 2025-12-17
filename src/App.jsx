@@ -3,18 +3,6 @@ import { Download, ExternalLink, Github, Linkedin, Mail, Phone, MapPin, Code, Da
 import { SiReact, SiNextdotjs, SiJavascript, SiHtml5, SiCss3, SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiGit, SiGithub, SiPostman, SiLinux, SiDocker } from 'react-icons/si';
 import resume from './assets/MyResume.pdf'
 import myimg from './assets/myimg.jpg'
-// Project images
-import empathyAI from './assets/mht-1.png'
-import biteBuzz from './assets/bite-buzz-1.png'
-import drugToxicity from './assets/drug-toxicity.png'
-import cardioGuard from './assets/cg-2.png'
-import neuroScan from './assets/alzhemier-1.png'
-import luxeStore from './assets/luxe-store.png'
-import blogSpark from './assets/blogspark.png'
-import wisdomAI from './assets/wisdom ai.png'
-import resumeAI from './assets/resumeai.png'
-import ideaForge from './assets/ideaforge.png'
-import aeroLink from './assets/aerolink.png'
 
 // Hero Section Component
 const Hero = () => {
@@ -348,103 +336,64 @@ const Skills = () => {
 const Projects = () => {
   const projects = [
     {
-      title: "Empathy AI - AI-Powered Multimodal Mental Health Therapy Chatbot",
-      description: "Advanced mental health support platform with AI-powered chatbot, multimodal therapy sessions, mood tracking, and personalized wellness recommendations.",
-      tech: ["LLM", "DL", "CNN", "OpenAI", "React", "Node", "MongoDB", "Flask", "Python", "FastAPI", "Tailwind CSS"],
-      image: empathyAI,
-      github: "#",
-      live: "#",
-      category: "Full Stack"
-    },
-    {
-      title: "Bite Buzz - Full Stack Food Delivery Platform",
-      description: "Complete food delivery ecosystem with restaurant management, real-time order tracking, payment processing, and customer mobile app with admin dashboard.",
-      tech: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Stripe API"],
-      image: biteBuzz,
-      github: "#",
-      live: "#",
-      category: "Full Stack"
-    },
-    {
-      title: "Drug Toxicity Predictor — AI Health Risk Analysis",
-      description: "End-to-end full stack system for predicting drug toxicity using machine learning and FastAPI — helping healthcare researchers analyze chemical compounds.",
-      tech: ["HTML", "CSS", "JavaScript", "Python", "FastAPI", "Scikit-learn", "Pandas", "NumPy"],
-      image: drugToxicity,
-      github: "#",
-      live: "#",
-      category: "Full Stack"
-    },
-    {
-      title: "CardioGuard — AI Heart Attack Risk Prediction",
-      description: "Smart health assessment web app combining ML prediction, Gemini AI, and visual analytics for personalized heart attack risk assessment and therapy plans.",
-      tech: ["React.js", "Recharts", "Tailwind CSS", "Node.js", "Express.js", "Flask", "FastAPI", "MongoDB", "Python", "Scikit-learn", "Pandas", "NumPy", "Gemini API"],
-      image: cardioGuard,
-      github: "#",
-      live: "#",
-      category: "Full Stack"
-    },
-    {
-      title: "NeuroScan AI — Alzheimer's Detection & Support Platform",
-      description: "AI-powered web platform for Alzheimer's prediction from MRI scans, medical insights via Gemini AI, and local doctor discovery using geolocation services.",
-      tech: ["HTML", "CSS", "JavaScript", "Django", "FastAPI", "TensorFlow", "Keras", "NumPy", "Gemini API", "PostgreSQL"],
-      image: neuroScan,
-      github: "#",
-      live: "#",
-      category: "Full Stack"
+      title: "Empathy AI — AI-Powered Mental Health Support Platform",
+      category: "Full-Stack • AI",
+      description: "Built a production-ready AI-driven mental health support platform with conversational assistance, sentiment awareness, and secure data handling.",
+      features: [
+        "Designed full-stack architecture with secure authentication and protected user data flows",
+        "Integrated LLM-based conversational logic with contextual memory and response handling",
+        "Implemented backend APIs for chat history, session management, and analytics",
+        "Focused on privacy-aware design and application security best practices"
+      ],
+      tech: ["React", "Node.js", "Python", "Flask", "MongoDB", "OpenAI API"]
     },
     {
       title: "LuxeStore — Full-Stack E-Commerce Platform",
-      description: "Modern, scalable shopping platform with Google OAuth authentication, dynamic filtering, real-time cart, Stripe payments, and order tracking.",
-      tech: ["React.js", "Redux Toolkit", "Tailwind CSS", "Material UI", "Node.js", "Express.js", "MongoDB", "Google OAuth", "JWT", "Stripe API", "Vercel", "Render"],
-      image: luxeStore,
-      github: "#",
-      live: "#",
-      category: "Full Stack"
+      category: "Full-Stack",
+      description: "Developed a scalable e-commerce system with user and admin dashboards, real-time cart management, and secure payment processing.",
+      features: [
+        "Built role-based authentication with Google OAuth and JWT",
+        "Implemented Stripe payment flow and order lifecycle management",
+        "Designed admin workflows for product, order, and user management",
+        "Optimized frontend performance and backend API reliability"
+      ],
+      tech: ["React", "Node.js", "Express", "MongoDB", "Stripe", "Tailwind CSS"]
     },
     {
-      title: "BlogSpark - AI Blog Idea Generator",
-      description: "AI-powered blog idea generator that helps content creators brainstorm creative topics and save favorite ideas for future reference.",
-      tech: ["Next.js", "MongoDB", "Tailwind CSS", "Vercel", "Gemini API"],
-      image: blogSpark,
-      github: "#",
-      live: "#",
-      category: "Automation & AI"
+      title: "Bite Buzz — Food Delivery Platform",
+      category: "Full-Stack",
+      description: "End-to-end food delivery application supporting restaurant management, real-time order tracking, and customer workflows.",
+      features: [
+        "Implemented real-time order status updates and admin dashboards",
+        "Built secure APIs for order creation, tracking, and updates",
+        "Integrated payment processing and role-based access control",
+        "Designed scalable backend services for concurrent usage"
+      ],
+      tech: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"]
     },
     {
-      title: "Wisdom AI - AI Quote Generator",
-      description: "Daily dose of AI-powered inspiration with categorized quote generation system for motivation and wisdom sharing.",
-      tech: ["Next.js", "MongoDB", "Tailwind CSS", "Vercel", "Gemini API"],
-      image: wisdomAI,
-      github: "#",
-      live: "#",
-      category: "Automation & AI"
+      title: "NeuroScan AI — Alzheimer's Detection Platform",
+      category: "AI • Full-Stack",
+      description: "AI-powered web platform for Alzheimer's risk analysis using medical imaging and predictive models.",
+      features: [
+        "Built ML inference pipelines for MRI-based predictions",
+        "Integrated AI insights with user-friendly visual dashboards",
+        "Designed secure backend services for medical data handling",
+        "Focused on performance and reliability for AI-driven workflows"
+      ],
+      tech: ["Python", "TensorFlow", "FastAPI", "PostgreSQL", "Gemini API"]
     },
     {
-      title: "Resume AI - AI Resume Builder",
-      description: "Complete AI-powered resume tailoring system with PDF export, job description matching, and professional formatting.",
-      tech: ["Next.js", "MongoDB", "Tailwind CSS", "Vercel", "OpenAI API"],
-      image: resumeAI,
-      github: "#",
-      live: "#",
-      category: "Automation & AI"
-    },
-    {
-      title: "IdeaForge AI - Startup Idea Finder",
-      description: "AI-powered startup idea generator that transforms personal interests into innovative business concepts and entrepreneurial opportunities.",
-      tech: ["Next.js", "MongoDB", "Tailwind CSS", "Vercel", "Gemini API"],
-      image: ideaForge,
-      github: "#",
-      live: "#",
-      category: "Automation & AI"
-    },
-    {
-      title: "AeroLink — 3D Product Launch Website",
-      description: "Immersive 3D web experience for next-gen wireless audio technology with interactive product showcase, cinematic animations, and performance optimization.",
-      tech: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Three.js (3D WebGL)"],
-      image: aeroLink,
-      github: "#",
-      live: "#",
-      category: "Website Design"
+      title: "Resume AI — AI Resume Builder",
+      category: "Automation & AI",
+      description: "AI-powered resume generation and tailoring platform for job-specific optimization.",
+      features: [
+        "Implemented resume parsing and job description matching logic",
+        "Built PDF export and formatting workflows",
+        "Designed scalable backend APIs for AI processing",
+        "Deployed end-to-end system with cloud-ready architecture"
+      ],
+      tech: ["Next.js", "MongoDB", "OpenAI API", "Tailwind CSS"]
     }
   ];
 
@@ -455,134 +404,78 @@ const Projects = () => {
           <h2 className="text-4xl font-bold text-slate-800 mb-4">
             Featured Projects
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            A showcase of my latest work, demonstrating full-stack development skills, 
-            AI integration, and innovative problem-solving approaches.
-          </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="max-w-5xl mx-auto space-y-8">
           {projects.map((project, index) => (
-            <div key={index} className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-              <div className="overflow-hidden rounded-2xl h-full">
-              {/* Project Image */}
-              <div className="h-56 relative overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                
-                {/* Category Badge */}
-                <div className="absolute top-4 left-4">
-                  <span className="bg-white/90 backdrop-blur-sm text-slate-800 px-3 py-1 rounded-full text-sm font-semibold">
+            <div 
+              key={index} 
+              className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 hover:border-blue-300"
+            >
+              {/* Header */}
+              <div className="mb-6">
+                <div className="mb-4">
+                  <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-1.5 rounded-full text-sm font-semibold inline-block">
                     {project.category}
                   </span>
                 </div>
-                
-                {/* Links Overlay */}
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                  {project.github && project.github !== "#" && (
-                    <a 
-                      href={project.github} 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-white text-slate-800 px-6 py-3 rounded-xl font-semibold hover:bg-slate-100 transition-colors duration-300 flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
-                    >
-                      <Github size={20} />
-                      View Code
-                    </a>
-                  )}
-                  {project.live && project.live !== "#" && (
-                    <a 
-                      href={project.live} 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-white text-slate-800 px-6 py-3 rounded-xl font-semibold hover:bg-slate-100 transition-colors duration-300 flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
-                    >
-                      <ExternalLink size={20} />
-                      Live Demo
-                    </a>
-                  )}
-                </div>
-              </div>
-              
-              {/* Project Content */}
-              <div className="p-8">
-                <h3 className="text-2xl font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4 group-hover:text-blue-600 transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-                
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-6">
+              </div>
+              
+              {/* Description */}
+              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                {project.description}
+              </p>
+              
+              {/* Features */}
+              <ul className="space-y-3 mb-8">
+                {project.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="flex items-start gap-3">
+                    <div className="mt-2 w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex-shrink-0"></div>
+                    <span className="text-slate-600 leading-relaxed">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              {/* Tech Stack */}
+              <div className="pt-6 border-t border-slate-200">
+                <div className="mb-4">
+                  <span className="text-sm font-semibold text-slate-700 uppercase tracking-wider">Tech Stack</span>
+                </div>
+                <div className="flex flex-wrap gap-3">
                   {project.tech.map((tech, techIndex) => (
-                    <span key={techIndex} className="bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 px-3 py-1.5 rounded-full text-sm font-medium border border-blue-100">
+                    <span 
+                      key={techIndex} 
+                      className="bg-slate-50 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium border border-slate-200 hover:bg-slate-100 hover:border-slate-300 hover:shadow-sm transition-all duration-300"
+                    >
                       {tech}
                     </span>
                   ))}
                 </div>
-                
-                {/* Links */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    {project.github && project.github !== "#" && (
-                      <a 
-                        href={project.github} 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-slate-700 hover:text-blue-600 transition-colors duration-300 font-medium group/link"
-                      >
-                        <Github size={18} className="group-hover/link:scale-110 transition-transform duration-300" />
-                        <span>GitHub</span>
-                        <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform duration-300" />
-                      </a>
-                    )}
-                    {project.live && project.live !== "#" && (
-                      <a 
-                        href={project.live} 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-slate-700 hover:text-purple-600 transition-colors duration-300 font-medium group/link"
-                      >
-                        <ExternalLink size={18} className="group-hover/link:scale-110 transition-transform duration-300" />
-                        <span>Live Demo</span>
-                        <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform duration-300" />
-                      </a>
-                    )}
-                  </div>
-                  
-                  <div className="flex items-center gap-1 text-slate-400">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-sm">Active</span>
-                  </div>
-                </div>
               </div>
             </div>
-          </div>
           ))}
         </div>
         
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-slate-50 to-purple-50 rounded-2xl p-8 max-w-2xl mx-auto">
+        {/* More Projects Section */}
+        <div className="mt-16 text-center">
+          <div className="bg-gradient-to-r from-slate-50 via-blue-50 to-purple-50 rounded-2xl p-10 max-w-3xl mx-auto border border-slate-200">
             <h3 className="text-2xl font-bold text-slate-800 mb-4">
-              Want to See More?
+              More Projects
             </h3>
-            <p className="text-slate-600 mb-6">
-              Check out my GitHub profile for more projects and contributions to open-source.
+            <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+              I've built additional AI tools, automation workflows, and experimental products across healthcare, content creation, and startup ideation.
             </p>
             <a 
               href="https://github.com/Abhi-0930/" 
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl group"
             >
-              <Github size={20} />
-              Visit GitHub
+              <span>👉 View all projects on GitHub</span>
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
             </a>
           </div>
         </div>
