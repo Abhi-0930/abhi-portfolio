@@ -639,97 +639,72 @@ const Freelancing = () => {
 const Achievements = () => {
   const achievements = [
     {
-      title: "VisionAVA Hackathon Top Performer",
-      description: "Recognized for developing an innovative healthcare solution leveraging the MERN stack, NLP, and Generative AI.",
-      icon: <Award className="w-8 h-8" />,
-      category: "Competition",
-      year: "2025"
+      title: "Top Performer — VisionAVA Hackathon (Generative AI Track)",
+      organization: "Anurag University",
+      year: "2025",
+      description: "Recognized for building an AI-powered healthcare application integrating full-stack development with NLP and generative AI, evaluated for innovation, practical impact, and technical execution.",
+      icon: <Award className="w-6 h-6" />,
+      color: "from-yellow-500 to-orange-500"
     },
     {
-      title: "Student Tribe Certified - Cybersecurity",
-      description: "Practical and theoretical knowledge in cybersecurity covering core concepts such as networking, ethical hacking, security protocols, penetration testing, soc  and risk management.",
-      icon: <Shield className="w-8 h-8" />,
-      category: "Certification",
-      year: "2024"
+      title: "Certified Cybersecurity Analyst",
+      organization: "Student Tribe",
+      year: "2024",
+      description: "Completed a structured cybersecurity training program covering networking fundamentals, web application security (OWASP), vulnerability assessment, penetration testing concepts, and risk management through hands-on labs.",
+      icon: <Shield className="w-6 h-6" />,
+      color: "from-red-500 to-pink-500"
     },
     {
-      title: "Cisco Packet Tracer",
-      description: "Gained hands-on experience in configuring routers, switches, and simulating secure, scalable network topologies using Cisco Packet Tracer.",
-      icon: <Brain className="w-8 h-8" />,
-      category: "Certification",
-      year: "2024"
-    },
-    {
-      title: "Networking Basics",
-      description: "Learned the concepts of networking and how to use the command line to configure routers and switches.",
-      icon: <Database className="w-8 h-8" />,
-      category: "Certification",
-      year: "2023"
+      title: "Networking & Systems Fundamentals",
+      organization: "Cisco Networking Academy",
+      year: "2023–2024",
+      description: "Completed foundational certifications focused on computer networking concepts, routing and switching basics, and network simulation using Cisco Packet Tracer.",
+      icon: <Database className="w-6 h-6" />,
+      color: "from-blue-500 to-cyan-500"
     }
   ];
 
   return (
-    <section id="achievements" className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50">
+    <section id="achievements" className="py-20 bg-slate-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-800 mb-4">
             Achievements & Certifications
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Recognition for excellence in technology, security, and innovation across various domains.
-          </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto space-y-6">
           {achievements.map((achievement, index) => (
-            <div key={index} className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-              <div className="relative bg-white rounded-2xl m-0.5 h-full flex flex-col">
-                <div className="p-8 flex-1 flex flex-col">
-                  {/* Header */}
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="flex items-center gap-4">
-                      <div className="bg-gradient-to-br from-blue-500 to-purple-600 text-white p-4 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
-                        {achievement.icon}
-                      </div>
-                      <div>
-                        <div className="flex items-center gap-3 mb-2">
-                          <span className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">
-                            {achievement.category}
-                          </span>
-                          <span className="text-slate-400 text-sm font-medium">
-                            {achievement.year}
-                          </span>
-                        </div>
-                        <h3 className="text-xl font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-300">
-                          {achievement.title}
-                        </h3>
-                      </div>
+            <div 
+              key={index} 
+              className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 hover:border-blue-300 transform hover:-translate-y-1"
+            >
+              <div className="flex items-start gap-6">
+                {/* Icon */}
+                <div className={`bg-gradient-to-r ${achievement.color} p-4 rounded-xl text-white shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                  {achievement.icon}
+                </div>
+                
+                {/* Content */}
+                <div className="flex-1">
+                  <div className="mb-4">
+                    <h3 className="text-2xl font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                      {achievement.title}
+                    </h3>
+                    <div className="flex flex-wrap items-center gap-2 text-slate-600">
+                      <span className="font-semibold text-slate-700">{achievement.organization}</span>
+                      <span className="text-slate-400">•</span>
+                      <span>{achievement.year}</span>
                     </div>
                   </div>
-                  
-                  {/* Description */}
-                  <p className="text-slate-600 leading-relaxed mb-6 flex-1">
+                  <p className="text-lg text-slate-600 leading-relaxed">
                     {achievement.description}
                   </p>
-                  
-                  {/* Bottom Decoration */}
-                  <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-                    <div className="flex items-center gap-2 text-slate-500">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-sm font-medium">Verified</span>
-                    </div>
-                    <div className="text-slate-400 text-sm">
-                      <span className="font-medium">Achievement #{index + 1}</span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        
-
       </div>
     </section>
   );
