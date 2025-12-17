@@ -818,7 +818,7 @@ const Contact = () => {
                     href="https://www.linkedin.com/in/abhishek-jujjuvarapu-556899276" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md"
+                    className="group bg-[#0077b5] hover:bg-[#005885] p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md"
                   >
                     <Linkedin className="w-6 h-6 text-white group-hover:animate-pulse" />
                   </a>
@@ -826,19 +826,19 @@ const Contact = () => {
                     href="https://github.com/Abhi-0930/" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md"
+                    className="group bg-[#24292e] hover:bg-[#1a1e22] p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md"
                   >
                     <Github className="w-6 h-6 text-white group-hover:animate-pulse" />
                   </a>
                   <a 
                     href="mailto:abhishek.j3094@gmail.com" 
-                    className="group bg-gradient-to-r from-pink-600 to-red-600 hover:from-pink-700 hover:to-red-700 p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md"
+                    className="group bg-[#ea4335] hover:bg-[#d33b2c] p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md"
                   >
                     <Mail className="w-6 h-6 text-white group-hover:animate-pulse" />
                   </a>
                   <a 
                     href="tel:+916302160783" 
-                    className="group bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md"
+                    className="group bg-[#25d366] hover:bg-[#20ba5a] p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md"
                   >
                     <Phone className="w-6 h-6 text-white group-hover:animate-pulse" />
                   </a>
@@ -846,7 +846,7 @@ const Contact = () => {
                     href="#" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md"
+                    className="group bg-gradient-to-r from-[#f09433] via-[#e6683c] to-[#dc2743] hover:from-[#e0852a] hover:via-[#d55a2f] hover:to-[#c7223a] p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md"
                   >
                     <SiInstagram className="w-6 h-6 text-white group-hover:animate-pulse" />
                   </a>
