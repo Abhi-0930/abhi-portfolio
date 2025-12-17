@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Download, ExternalLink, Github, Linkedin, Mail, Phone, MapPin, Code, Database, Shield, Brain, Award, Calendar, ArrowRight, Menu, X, Server, Briefcase, Users, Monitor, Wrench, Lock, FileCode, Globe, Key, Cloud, Terminal, Layers } from 'lucide-react';
+import { Download, ExternalLink, Github, Linkedin, Mail, Phone, MapPin, Code, Database, Shield, Brain, Award, Calendar, ArrowRight, Menu, X, Server, Briefcase, Users, Monitor, Wrench, Lock, FileCode, Globe, Key, Cloud, Terminal, Layers, CheckCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import { SiReact, SiNextdotjs, SiJavascript, SiHtml5, SiCss3, SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiGit, SiGithub, SiPostman, SiLinux, SiDocker } from 'react-icons/si';
 import resume from './assets/MyResume.pdf'
 import myimg from './assets/myimg.jpg'
@@ -721,24 +722,52 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Create mailto link with form data
-    const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
-    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
-    const mailtoLink = `mailto:abhishek.j3094@gmail.com?subject=${subject}&body=${body}`;
-    
-    // Open email client
-    window.open(mailtoLink, '_blank');
-    
-    // Clear form
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // Send email using EmailJS
+      // Replace 'YOUR_TEMPLATE_ID' and 'YOUR_PUBLIC_KEY' with your actual EmailJS template ID and public key
+      await emailjs.send(
+        'service_2l0550o', // Service ID
+        'YOUR_TEMPLATE_ID', // Template ID - Replace with your EmailJS template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: 'abhishek.j3094@gmail.com'
+        },
+        'YOUR_PUBLIC_KEY' // Public Key - Replace with your EmailJS public key
+      );
+
+      // Success
+      setSubmitStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setSubmitStatus('error');
+      
+      // Reset error message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -847,20 +876,52 @@ const Contact = () => {
             </div>
             
             {/* Right Column - Contact Form */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200">
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 relative">
               <h3 className="text-2xl font-bold text-slate-800 mb-2">
                 Send a Message
               </h3>
               <p className="text-slate-600 mb-6">
                 Use the form below to share details about your project or opportunity. I usually respond within 24–48 hours.
               </p>
+              
+              {/* Success Message */}
+              {submitStatus === 'success' && (
+                <div className="mb-6 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl p-6 animate-in slide-in-from-top duration-300">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-green-500 p-2 rounded-full flex-shrink-0">
+                      <CheckCircle className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-lg font-bold text-green-800 mb-1">Message Sent Successfully!</h4>
+                      <p className="text-green-700">Your message has been submitted. I'll get back to you within 24–48 hours.</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Error Message */}
+              {submitStatus === 'error' && (
+                <div className="mb-6 bg-gradient-to-r from-red-50 to-pink-50 border-2 border-red-200 rounded-xl p-6 animate-in slide-in-from-top duration-300">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-red-500 p-2 rounded-full flex-shrink-0">
+                      <X className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-lg font-bold text-red-800 mb-1">Something Went Wrong</h4>
+                      <p className="text-red-700">Please try again or contact me directly at abhishek.j3094@gmail.com</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <input
                     type="text"
                     placeholder="Name"
                     required
-                    className="w-full bg-slate-50 text-slate-800 placeholder-slate-500 px-5 py-3.5 rounded-xl border border-slate-200 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-all duration-300"
+                    disabled={isSubmitting}
+                    className="w-full bg-slate-50 text-slate-800 placeholder-slate-500 px-5 py-3.5 rounded-xl border border-slate-200 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
                   />
@@ -870,7 +931,8 @@ const Contact = () => {
                     type="email"
                     placeholder="Email"
                     required
-                    className="w-full bg-slate-50 text-slate-800 placeholder-slate-500 px-5 py-3.5 rounded-xl border border-slate-200 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-all duration-300"
+                    disabled={isSubmitting}
+                    className="w-full bg-slate-50 text-slate-800 placeholder-slate-500 px-5 py-3.5 rounded-xl border border-slate-200 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                   />
@@ -880,17 +942,28 @@ const Contact = () => {
                     placeholder="Message"
                     rows="6"
                     required
-                    className="w-full bg-slate-50 text-slate-800 placeholder-slate-500 px-5 py-3.5 rounded-xl border border-slate-200 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-all duration-300 resize-none"
+                    disabled={isSubmitting}
+                    className="w-full bg-slate-50 text-slate-800 placeholder-slate-500 px-5 py-3.5 rounded-xl border border-slate-200 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-all duration-300 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-4 px-8 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-3 group shadow-lg"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:from-slate-400 disabled:to-slate-500 text-white py-4 px-8 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl disabled:hover:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-3 group shadow-lg"
                 >
-                  <span>Send Message</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Send Message</span>
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                    </>
+                  )}
                 </button>
               </form>
             </div>
@@ -922,23 +995,16 @@ const Education = () => {
         {/* Education Card */}
         <div className="max-w-4xl mx-auto">
           <div className="bg-gradient-to-r from-slate-50 to-blue-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-              <div>
-                <h3 className="text-2xl font-bold text-slate-800 mb-1">
-                  Bachelor of Technology (B.Tech)
-                </h3>
-                <p className="text-lg text-blue-600 font-semibold mb-2">
-                  Minor in Artificial Intelligence
-                </p>
-                <p className="text-slate-600 font-medium">
-                  Anurag University, Hyderabad
-                </p>
-              </div>
-              <div className="mt-4 lg:mt-0 text-right">
-                <div className="text-lg text-slate-600 font-semibold">
-                  2022 – 2026
-                </div>
-              </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-1">
+                Bachelor of Technology (B.Tech)
+              </h3>
+              <p className="text-lg text-blue-600 font-semibold mb-2">
+                Minor in Artificial Intelligence
+              </p>
+              <p className="text-slate-600 font-medium">
+                Anurag University, Hyderabad
+              </p>
             </div>
           </div>
         </div>
