@@ -488,48 +488,71 @@ const Projects = () => {
 const Experience = () => {
   const experiences = [
     {
-      company: "GirlScript Summer of Code 2025",
-      role: "Open Source Contributor",
-      duration: "July 2025 – Present",
-      description: "Contributing to community-driven open-source projects under GSSoC '25. Implementing features, fixing bugs, improving documentation and accessibility, and collaborating through code reviews using Full Stack Development."
+      role: "Open Source Contributor — Full Stack Development",
+      company: "GirlScript Summer of Code (GSSoC 2025)",
+      duration: "Jul 2025 – Present",
+      description: "Contributing to community-driven open-source projects by implementing new features, fixing bugs, and improving overall application quality. Actively collaborating through pull requests, code reviews, and structured workflows while following best practices in full-stack development and code maintainability.",
+      icon: <Github className="w-6 h-6" />,
+      color: "from-blue-500 to-purple-500"
     },
     {
-      company: "Coding Cubs",
       role: "Design Team Lead",
+      company: "Coding Cubs",
       duration: "Aug 2024 – Jan 2025",
-      description: "Promoted from team member to Design Team Lead, where I led UI/UX design efforts, coordinated with developers, and ensured timely execution of design deliverables. Oversaw team collaboration, task distribution, and design quality across multiple web-based projects."
+      description: "Promoted from team member to lead role based on performance and ownership. Led UI/UX initiatives across multiple web projects, coordinated with developers, managed task distribution, and ensured consistent design quality and on-time delivery.",
+      icon: <Award className="w-6 h-6" />,
+      color: "from-purple-500 to-pink-500"
     },
     {
-      company: "Prodigy InfoTech",
       role: "Web Developer Intern",
+      company: "Prodigy InfoTech",
       duration: "Sep 2024 – Oct 2024",
-      description: "Completed a 2-month remote internship focused on full-stack web development using the MERN stack. Built responsive user interfaces, implemented secure authentication, and followed best practices for writing clean, maintainable, and security-conscious code."
+      description: "Worked on full-stack web development using the MERN stack, building responsive interfaces and implementing secure authentication flows. Followed clean coding practices and security-aware development principles while contributing to production-oriented features.",
+      icon: <Code className="w-6 h-6" />,
+      color: "from-green-500 to-emerald-500"
     }
   ];
 
   return (
-    <section id="experience" className="py-20 bg-white">
+    <section id="experience" className="py-20 bg-slate-50">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-12 text-slate-800">
-          Experience
-        </h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-slate-800 mb-4">
+            Experience
+          </h2>
+        </div>
         
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-8">
-            {experiences.map((exp, index) => (
-              <div key={index} className="relative pl-8 border-l-2 border-purple-200">
-                <div className="absolute -left-2 top-0 w-4 h-4 bg-purple-500 rounded-full"></div>
-                <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-lg">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                    <h3 className="text-xl font-semibold text-slate-800">{exp.role}</h3>
-                    <span className="text-purple-600 font-medium">{exp.duration}</span>
+        <div className="max-w-5xl mx-auto space-y-6">
+          {experiences.map((exp, index) => (
+            <div 
+              key={index} 
+              className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 hover:border-blue-300 transform hover:-translate-y-1"
+            >
+              <div className="flex items-start gap-6">
+                {/* Icon */}
+                <div className={`bg-gradient-to-r ${exp.color} p-4 rounded-xl text-white shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                  {exp.icon}
+                </div>
+                
+                {/* Content */}
+                <div className="flex-1">
+                  <div className="mb-4">
+                    <h3 className="text-2xl font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                      {exp.role}
+                    </h3>
+                    <div className="flex flex-wrap items-center gap-2 text-slate-600">
+                      <span className="font-semibold text-slate-700">{exp.company}</span>
+                      <span className="text-slate-400">•</span>
+                      <span>{exp.duration}</span>
+                    </div>
                   </div>
-                  <h4 className="text-lg text-purple-600 mb-3">{exp.company}</h4>
-                  <p className="text-slate-600">{exp.description}</p>
+                  <p className="text-lg text-slate-600 leading-relaxed">
+                    {exp.description}
+                  </p>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
