@@ -1088,111 +1088,38 @@ const Contact = () => {
 
 // Education Section Component
 const Education = () => {
-  const educationData = [
-    {
-      degree: "Bachelor of Technology",
-      field: "Artificial Intelligence",
-      institution: "Anurag University",
-      duration: "2022 - 2026",
-      gpa: "7.2",
-      description: "Specialized in software engineering, data structures, algorithms, and modern web technologies. Active participation in coding competitions and hackathons.",
-      achievements: ["Hackathon Winner", "Design Team Lead", "Web Developer Intern"]
-    },
-    {
-      degree: "Intermediate",
-      field: "Science (MPC)",
-      institution: "Narayana Junior College",
-      duration: "2020 - 2022",
-      gpa: "8.5",
-      description: "Focused on Mathematics, Physics, and Computer Science. Developed strong analytical and problem-solving skills.",
-      achievements: []
-    },
-    {
-      degree: "Secondary School",
-      field: "SSC",
-      institution: "Bethany Academy",
-      duration: "2008 - 2020",
-      gpa: "9.8",
-      description: "Completed secondary education with distinction. Developed foundation in core subjects and extracurricular activities.",
-      achievements: ["3x singing competition winner", "2x carrom competition winner","1x chess competition runner"]
-    }
-  ];
-
-
-
   return (
     <section id="education" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-800 mb-4">
-            Educational Journey
+            Education
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            My academic path has been driven by curiosity and a passion for technology, 
-            building a strong foundation for my career in software development.
-          </p>
         </div>
 
-
-
-        {/* Education Timeline */}
+        {/* Education Card */}
         <div className="max-w-4xl mx-auto">
-          <div className="space-y-8">
-            {educationData.map((edu, index) => (
-              <div 
-                key={index}
-                className="relative"
-              >
-                {/* Timeline Line */}
-                <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
-                
-                {/* Timeline Dot */}
-                <div className="absolute left-6 top-6 w-4 h-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full border-4 border-white shadow-lg"></div>
-                
-                {/* Content Card */}
-                <div className="ml-16 bg-gradient-to-r from-slate-50 to-blue-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold text-slate-800 mb-1">
-                        {edu.degree}
-                      </h3>
-                      <p className="text-lg text-blue-600 font-semibold mb-2">
-                        {edu.field}
-                      </p>
-                      <p className="text-slate-600 font-medium">
-                        {edu.institution}
-                      </p>
-                    </div>
-                    <div className="mt-4 lg:mt-0 text-right">
-                      <div className="text-sm text-slate-500 mb-1">{edu.duration}</div>
-                      <div className="text-2xl font-bold text-green-600">
-                        {edu.gpa} GPA
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <p className="text-slate-600 mb-4 leading-relaxed">
-                    {edu.description}
-                  </p>
-                  
-                  {/* Achievements */}
-                  <div className="flex flex-wrap gap-2">
-                    {edu.achievements.map((achievement, achIndex) => (
-                      <span 
-                        key={achIndex}
-                        className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-medium shadow-sm border border-blue-100"
-                      >
-                        {achievement}
-                      </span>
-                    ))}
-                  </div>
+          <div className="bg-gradient-to-r from-slate-50 to-blue-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+              <div>
+                <h3 className="text-2xl font-bold text-slate-800 mb-1">
+                  Bachelor of Technology (B.Tech)
+                </h3>
+                <p className="text-lg text-blue-600 font-semibold mb-2">
+                  Minor in Artificial Intelligence
+                </p>
+                <p className="text-slate-600 font-medium">
+                  Anurag University, Hyderabad
+                </p>
+              </div>
+              <div className="mt-4 lg:mt-0 text-right">
+                <div className="text-lg text-slate-600 font-semibold">
+                  2022 – 2026
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
-
-
       </div>
     </section>
   );
