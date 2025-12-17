@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Download, ExternalLink, Github, Linkedin, Mail, Phone, MapPin, Code, Database, Shield, Brain, Award, Calendar, ArrowRight, Menu, X, Server, Briefcase, Users } from 'lucide-react';
+import { Download, ExternalLink, Github, Linkedin, Mail, Phone, MapPin, Code, Database, Shield, Brain, Award, Calendar, ArrowRight, Menu, X, Server, Briefcase, Users } from 'lucide-react';
 import resume from './assets/MyResume.pdf'
 import myimg from './assets/myimg.jpg'
 // Project images
@@ -132,16 +132,6 @@ const Hero = () => {
           </div>
           
 
-        </div>
-      </div>
-      
-      {/* Professional Scroll Indicator - Moved Down */}
-      <div className="absolute -bottom-20 sm:bottom-32 left-1/2 transform -translate-x-1/2">
-        <div className="flex flex-col items-center gap-3">
-          <span className="text-sm text-slate-500 uppercase tracking-wider font-medium">Scroll</span>
-          <div className="w-6 h-10 border-2 border-slate-300 rounded-full flex justify-center bg-white/50 backdrop-blur-sm">
-            <div className="w-1 h-3 bg-slate-400 rounded-full mt-2 animate-bounce"></div>
-          </div>
         </div>
       </div>
     </section>
