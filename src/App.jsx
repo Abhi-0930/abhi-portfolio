@@ -18,53 +18,13 @@ import aeroLink from './assets/aerolink.png'
 // Hero Section Component
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [currentRole, setCurrentRole] = useState(0);
-  const [displayText, setDisplayText] = useState('');
-  const [isTyping, setIsTyping] = useState(true);
-  const [counts, setCounts] = useState({ projects: 0, experience: 0, technologies: 0 });
-  
-  const roles = [
-    "Full Stack Developer",
-    "Cyber Security Analyst", 
-    "AI Tools Expert"
-  ];
+  const [counts, setCounts] = useState({ projects: 0, experience: 0, openSource: 0 });
 
-  const targetCounts = { projects: 50, experience: 1, technologies: 25 };
+  const targetCounts = { projects: 10, experience: 1, openSource: 3 };
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
-  useEffect(() => {
-    let timeout;
-    
-    if (isTyping) {
-      // Typing animation
-      if (displayText.length < roles[currentRole].length) {
-        timeout = setTimeout(() => {
-          setDisplayText(roles[currentRole].slice(0, displayText.length + 1));
-        }, 100);
-      } else {
-        // Finished typing, wait then start clearing
-        timeout = setTimeout(() => {
-          setIsTyping(false);
-        }, 2000);
-      }
-    } else {
-      // Clearing animation
-      if (displayText.length > 0) {
-        timeout = setTimeout(() => {
-          setDisplayText(displayText.slice(0, -1));
-        }, 50);
-      } else {
-        // Finished clearing, move to next role
-        setCurrentRole((prev) => (prev + 1) % roles.length);
-        setIsTyping(true);
-      }
-    }
-    
-    return () => clearTimeout(timeout);
-  }, [displayText, isTyping, currentRole, roles]);
 
   // Counter animation effect
   useEffect(() => {
@@ -122,13 +82,11 @@ const Hero = () => {
             <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6 rounded-full"></div>
             <h2 className="text-2xl md:text-3xl font-semibold text-slate-600 mb-4 min-h-[2.5rem] flex items-center justify-center">
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                {displayText}
+                Full Stack Developer
               </span>
-              <span className={`ml-1 ${isTyping ? 'animate-pulse' : 'opacity-0'}`}>|</span>
             </h2>
             <p className="text-lg md:text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed">
-              Specializing in AI-driven applications and cybersecurity solutions. 
-              Building scalable, innovative digital experiences that drive business growth.
+              Building secure, scalable web applications with modern full-stack technologies, practical application security, and AI-powered features for real-world use.
             </p>
           </div>
           
@@ -138,19 +96,19 @@ const Hero = () => {
               <div className="text-3xl font-bold text-slate-800">
                 {counts.projects}+
               </div>
-              <div className="text-sm text-slate-500 uppercase tracking-wide">Projects Completed</div>
+              <div className="text-sm text-slate-500 uppercase tracking-wide">Production-Grade Projects</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-slate-800">
                 {counts.experience}+
               </div>
-              <div className="text-sm text-slate-500 uppercase tracking-wide">Years Experience</div>
+              <div className="text-sm text-slate-500 uppercase tracking-wide">Year Experience</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-slate-800">
-                {counts.technologies}+
+                {counts.openSource}+
               </div>
-              <div className="text-sm text-slate-500 uppercase tracking-wide">Technologies</div>
+              <div className="text-sm text-slate-500 uppercase tracking-wide">Open-Source Projects Contributed</div>
             </div>
           </div>
           
