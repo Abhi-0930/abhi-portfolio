@@ -732,18 +732,20 @@ const Contact = () => {
 
     try {
       // Send email using EmailJS
-      // Replace 'YOUR_TEMPLATE_ID' and 'YOUR_PUBLIC_KEY' with your actual EmailJS template ID and public key
-      await emailjs.send(
-        'service_2l0550o', // Service ID
-        'YOUR_TEMPLATE_ID', // Template ID - Replace with your EmailJS template ID
+      // Using standard EmailJS template variable names
+      const result = await emailjs.send(
+        'service_5xrqexy', // Service ID
+        'template_zf7qium', // Template ID
         {
-          from_name: formData.name,
-          from_email: formData.email,
+          user_name: formData.name,
+          user_email: formData.email,
           message: formData.message,
-          to_email: 'abhishek.j3094@gmail.com'
+          reply_to: formData.email
         },
-        'YOUR_PUBLIC_KEY' // Public Key - Replace with your EmailJS public key
+        'uq7o3-kx-ckVePfY5' // Public Key
       );
+
+      console.log('EmailJS Success:', result);
 
       // Success
       setSubmitStatus('success');
@@ -758,13 +760,17 @@ const Contact = () => {
         setSubmitStatus(null);
       }, 5000);
     } catch (error) {
-      console.error('EmailJS Error:', error);
+      console.error('EmailJS Error Details:', error);
+      console.error('Error Status:', error.status);
+      console.error('Error Text:', error.text);
+      
+      // Set error status - the UI will show appropriate message
       setSubmitStatus('error');
       
-      // Reset error message after 5 seconds
+      // Reset error message after 8 seconds (longer for Gmail auth issues)
       setTimeout(() => {
         setSubmitStatus(null);
-      }, 5000);
+      }, 8000);
     } finally {
       setIsSubmitting(false);
     }
@@ -907,8 +913,14 @@ const Contact = () => {
                       <X className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-lg font-bold text-red-800 mb-1">Something Went Wrong</h4>
-                      <p className="text-red-700">Please try again or contact me directly at abhishek.j3094@gmail.com</p>
+                      <h4 className="text-lg font-bold text-red-800 mb-1">Unable to Send Message</h4>
+                      <p className="text-red-700 mb-2">There was an issue with the email service. Please contact me directly at:</p>
+                      <a 
+                        href="mailto:abhishek.j3094@gmail.com" 
+                        className="text-blue-600 hover:text-blue-800 font-semibold underline"
+                      >
+                        abhishek.j3094@gmail.com
+                      </a>
                     </div>
                   </div>
                 </div>
