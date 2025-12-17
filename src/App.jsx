@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Download, ExternalLink, Github, Linkedin, Mail, Phone, MapPin, Code, Database, Shield, Brain, Award, Calendar, ArrowRight, Menu, X, Server, Briefcase, Users } from 'lucide-react';
+import { Download, ExternalLink, Github, Linkedin, Mail, Phone, MapPin, Code, Database, Shield, Brain, Award, Calendar, ArrowRight, Menu, X, Server, Briefcase, Users, Monitor, Wrench, Lock, FileCode, Globe, Key, Cloud, Terminal, Layers } from 'lucide-react';
+import { SiReact, SiNextdotjs, SiJavascript, SiHtml5, SiCss3, SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiGit, SiGithub, SiPostman, SiLinux, SiDocker } from 'react-icons/si';
 import resume from './assets/MyResume.pdf'
 import myimg from './assets/myimg.jpg'
 // Project images
@@ -200,99 +201,89 @@ const About = () => {
 
 // Skills Section Component
 const Skills = () => {
-  const [activeCategory, setActiveCategory] = useState('frontend');
+  // Icon mapping for individual skills with brand logos
+  const getSkillIcon = (skill) => {
+    const iconMap = {
+      "React.js": <SiReact className="w-5 h-5" />,
+      "Next.js": <SiNextdotjs className="w-5 h-5" />,
+      "JavaScript (ES6+)": <SiJavascript className="w-5 h-5" />,
+      "HTML": <SiHtml5 className="w-5 h-5" />,
+      "CSS": <SiCss3 className="w-5 h-5" />,
+      "Tailwind CSS": <SiTailwindcss className="w-5 h-5" />,
+      "Node.js": <SiNodedotjs className="w-5 h-5" />,
+      "Express.js": <SiExpress className="w-5 h-5" />,
+      "REST APIs": <Globe className="w-5 h-5" />,
+      "JWT Authentication": <Key className="w-5 h-5" />,
+      "MongoDB": <SiMongodb className="w-5 h-5" />,
+      "PostgreSQL": <SiPostgresql className="w-5 h-5" />,
+      "Cloudinary": <Cloud className="w-5 h-5" />,
+      "Web Application Security (OWASP Top 10)": <Shield className="w-5 h-5" />,
+      "Secure Authentication": <Lock className="w-5 h-5" />,
+      "Access Control": <Shield className="w-5 h-5" />,
+      "Git": <SiGit className="w-5 h-5" />,
+      "GitHub": <SiGithub className="w-5 h-5" />,
+      "Postman": <SiPostman className="w-5 h-5" />,
+      "Linux": <SiLinux className="w-5 h-5" />,
+      "Docker": <SiDocker className="w-5 h-5" />
+    };
+    return iconMap[skill] || <Code className="w-5 h-5" />;
+  };
 
   const skillCategories = [
     {
-      id: 'frontend',
       title: "Frontend Development",
-      icon: <Code className="w-6 h-6" />,
+      icon: <Monitor className="w-6 h-6" />,
       color: "from-blue-500 to-cyan-500",
-      skills: [
-        { name: "React.js", level: 90 },
-        { name: "Next.js", level: 75 },
-        { name: "JavaScript (ES6+)", level: 95 },
-        { name: "TypeScript", level: 80 },
-        { name: "HTML", level: 100 },
-        { name: "CSS", level: 100 },
-        { name: "Tailwind CSS", level: 100 },
-        { name: "Figma", level: 85 }
-      ]
+      bgColor: "from-blue-50 to-cyan-50",
+      borderColor: "border-blue-200",
+      skillColor: "text-blue-600",
+      skillBg: "bg-blue-50",
+      skillBorder: "border-blue-200",
+      skills: ["React.js", "Next.js", "JavaScript (ES6+)", "HTML", "CSS", "Tailwind CSS"]
     },
     {
-      id: 'backend',
-      title: "Backend Development",
+      title: "Backend & APIs",
       icon: <Server className="w-6 h-6" />,
       color: "from-purple-500 to-pink-500",
-      skills: [
-        { name: "Node.js", level: 90 },
-        { name: "Express.js", level: 92 },
-        { name: "REST APIs", level: 90 },
-        { name: "JWT Authentication", level: 95 }
-      ]
+      bgColor: "from-purple-50 to-pink-50",
+      borderColor: "border-purple-200",
+      skillColor: "text-purple-600",
+      skillBg: "bg-purple-50",
+      skillBorder: "border-purple-200",
+      skills: ["Node.js", "Express.js", "REST APIs", "JWT Authentication"]
     },
     {
-      id: 'database',
       title: "Databases & Storage",
       icon: <Database className="w-6 h-6" />,
       color: "from-green-500 to-emerald-500",
-      skills: [
-        { name: "MongoDB", level: 90 },
-        { name: "PostgreSQL", level: 75 },
-        { name: "Cloudinary", level: 85 }
-      ]
+      bgColor: "from-green-50 to-emerald-50",
+      borderColor: "border-green-200",
+      skillColor: "text-green-600",
+      skillBg: "bg-green-50",
+      skillBorder: "border-green-200",
+      skills: ["MongoDB", "PostgreSQL", "Cloudinary"]
     },
     {
-      id: 'cybersecurity',
-      title: "Cybersecurity",
+      title: "Application Security",
       icon: <Shield className="w-6 h-6" />,
       color: "from-red-500 to-orange-500",
-      isLearning: true,
-      skills: [
-        { name: "Penetration Testing", level: 78 },
-        { name: "Web Application Security (OWASP)", level: 80 },
-        { name: "Social Engineering", level: 90 },
-        { name: "Kali Linux", level: 80 },
-        { name: "Cisco Packet Tracer", level: 87 }
-      ]
+      bgColor: "from-red-50 to-orange-50",
+      borderColor: "border-red-200",
+      skillColor: "text-red-600",
+      skillBg: "bg-red-50",
+      skillBorder: "border-red-200",
+      skills: ["Web Application Security (OWASP Top 10)", "Secure Authentication", "Access Control"]
     },
     {
-      id: 'tools',
-      title: "Tools & Technologies",
-      icon: <Brain className="w-6 h-6" />,
+      title: "Tools & Platforms",
+      icon: <Wrench className="w-6 h-6" />,
       color: "from-indigo-500 to-purple-500",
-      skills: [
-        { name: "Git", level: 90 },
-        { name: "GitHub", level: 95 },
-        { name: "Docker", level: 75 },
-        { name: "VS Code", level: 100 },
-        { name: "Python", level: 80 },
-        { name: "C++", level: 70 }
-      ]
-    },
-    {
-      id: 'creative',
-      title: "Creative Skills",
-      icon: <Award className="w-6 h-6" />,
-      color: "from-pink-500 to-rose-500",
-      skills: [
-        { name: "Graphic Design (Canva, Photoshop)", level: 85 },
-        { name: "Video Editing (CapCut, VN Editor)", level: 90 },
-        { name: "UI Prototyping (Figma, Framer)", level: 80 },
-        { name: "Social Media Marketing", level: 95 }
-      ]
-    },
-    {
-      id: 'soft',
-      title: "Soft Skills",
-      icon: <Award className="w-6 h-6" />,
-      color: "from-yellow-500 to-orange-500",
-      skills: [
-        { name: "Communication & Presentation", level: 90 },
-        { name: "Team Leadership & Collaboration", level: 95 },
-        { name: "Problem Solving & Decision Making", level: 88 },
-        { name: "Time Management & Task Prioritization", level: 90 }
-      ]
+      bgColor: "from-indigo-50 to-purple-50",
+      borderColor: "border-indigo-200",
+      skillColor: "text-indigo-600",
+      skillBg: "bg-indigo-50",
+      skillBorder: "border-indigo-200",
+      skills: ["Git", "GitHub", "Postman", "Linux", "Docker"]
     }
   ];
 
@@ -301,103 +292,50 @@ const Skills = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-800 mb-4">
-            Technical Skills & Expertise
+            Technical Skills
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            A comprehensive toolkit of technical and creative skills that enable me to build 
-            innovative solutions and deliver exceptional user experiences.
-          </p>
         </div>
         
-        {/* Category Navigation */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {skillCategories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
-                activeCategory === category.id
-                  ? `bg-gradient-to-r ${category.color} text-white shadow-lg`
-                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-              }`}
-            >
-              {category.title}
-            </button>
-          ))}
-        </div>
-        
-        {/* Skills Display */}
-        <div className="max-w-4xl mx-auto">
-          {skillCategories.map((category) => (
-            <div
-              key={category.id}
-              className={`transition-all duration-500 ${
-                activeCategory === category.id ? 'block opacity-100' : 'hidden opacity-0'
-              }`}
-            >
-              <div className="text-center mb-8">
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r ${category.color} text-white mb-4 shadow-lg`}>
-                  {category.icon}
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6">
+            {skillCategories.map((category, index) => (
+              <div 
+                key={index} 
+                className={`bg-gradient-to-r ${category.bgColor} p-6 rounded-2xl border-2 ${category.borderColor} hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group`}
+              >
+                <div className="flex items-center gap-4 mb-5">
+                  <div className={`bg-gradient-to-r ${category.color} p-3 rounded-xl text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    {category.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-800">
+                    {category.title}
+                  </h3>
                 </div>
-                <div className="text-center mb-2">
-                  <h3 className="text-2xl font-bold text-slate-800">{category.title}</h3>
-                  {category.isLearning && (
-                    <div className="mt-2">
-                      <div className="bg-gradient-to-r from-orange-400 to-red-500 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-md animate-pulse inline-block">
-                        Learning Phase
+                <div className="flex flex-wrap gap-3">
+                  {category.skills.map((skill, skillIndex) => (
+                    <div
+                      key={skillIndex}
+                      className={`group/skill ${category.skillBg} ${category.skillBorder} border-2 rounded-xl px-4 py-3 flex items-center gap-2.5 hover:shadow-lg hover:scale-105 hover:-translate-y-0.5 transition-all duration-300 cursor-default`}
+                    >
+                      <div className={`${category.skillColor} group-hover/skill:scale-110 transition-transform duration-300`}>
+                        {getSkillIcon(skill)}
                       </div>
-                    </div>
-                  )}
-                </div>
-                <div className="w-24 h-1 bg-gradient-to-r from-slate-300 to-slate-400 mx-auto rounded-full"></div>
-              </div>
-              
-              <div className="grid gap-6">
-                {category.skills.map((skill, index) => (
-                  <div key={index} className="bg-slate-50 rounded-xl p-6 hover:shadow-md transition-all duration-300">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="font-semibold text-slate-800 text-lg">{skill.name}</span>
-                      <span className="text-sm font-medium text-slate-500 bg-slate-100 px-2 py-1 rounded">
-                        {skill.level}%
+                      <span className={`${category.skillColor} font-semibold text-sm`}>
+                        {skill}
                       </span>
                     </div>
-                    <div className="w-full bg-slate-200 rounded-full h-3">
-                      <div 
-                        className={`h-3 rounded-full bg-gradient-to-r ${category.color} transition-all duration-1000 ease-out`}
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-        
-        {/* Skills Summary */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-slate-50 to-purple-50 rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-slate-800 mb-4">
-              Why These Skills Matter
-            </h3>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              My diverse skill set enables me to handle projects from concept to deployment. 
-              From frontend development to cybersecurity, I bring a holistic approach to problem-solving 
-              that combines technical expertise with creative thinking and strong collaboration skills.
-            </p>
-            <div className="flex flex-wrap justify-center gap-6 mt-6">
-              <div className="flex items-center gap-2 text-purple-600">
-                <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                <span className="font-medium">Full-Stack Development</span>
-              </div>
-              <div className="flex items-center gap-2 text-purple-600">
-                <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                <span className="font-medium">Security-First Approach</span>
-              </div>
-              <div className="flex items-center gap-2 text-purple-600">
-                <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                <span className="font-medium">Creative Problem Solving</span>
-              </div>
+            ))}
+          </div>
+          
+          {/* Optional Focus Statement */}
+          <div className="mt-12 text-center">
+            <div className="bg-gradient-to-r from-slate-50 to-purple-50 rounded-2xl p-8 border border-slate-200">
+              <p className="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
+                Focused on building production-ready systems with clean architecture, performance optimization, and security-aware development practices.
+              </p>
             </div>
           </div>
         </div>
