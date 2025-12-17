@@ -150,12 +150,13 @@ const About = () => {
           
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Professional Photo */}
-            <div className="relative mt-12 lg:mt-6">
+            <div className="relative mt-16 lg:mt-12">
               <div className="relative z-10">
                 <img 
                   src= {myimg} 
                   alt="Abhishek - Full Stack Developer"
                   className="w-full h-[600px] object-cover rounded-2xl shadow-2xl"
+                  style={{ objectPosition: 'center 20%' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent rounded-2xl"></div>
               </div>
@@ -165,36 +166,17 @@ const About = () => {
             </div>
             
             {/* About Content */}
-            <div className="space-y-6">
+            <div className="space-y-6 pt-12 lg:pt-20">
               <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-slate-800">
-                  Passionate Developer & Problem Solver
-                </h3>
                 <p className="text-lg text-slate-600 leading-relaxed">
-                I’m a passionate Full Stack Developer who loves turning ideas into scalable, real-world web solutions. I work mainly with the MERN stack and Next.js, focusing on building clean, responsive UIs and secure backend systems that actually make an impact.
+                  I'm a full-stack developer with hands-on experience building production-grade web applications using the MERN stack and Next.js. My work focuses on designing clean user interfaces, developing robust backend APIs, and delivering scalable systems built for real-world use.
                 </p>
                 <p className="text-lg text-slate-600 leading-relaxed">
-                With a solid background in cybersecurity, I take a security-first approach to everything I build — making sure applications are not just fast, but also reliable and safe.
+                  I follow a security-aware development approach, applying practical application security principles to ensure reliability, data protection, and long-term maintainability. This allows me to build systems that are not only functional, but also safe to operate in production environments.
                 </p>
                 <p className="text-lg text-slate-600 leading-relaxed">
-                Beyond academics, I’ve been deeply involved in startup-driven product development, contributing to platforms that solve real problems — from AI-powered tools to educational web solutions. I enjoy collaboration, problem-solving, and creating tech that bridges ideas with execution.
+                  I've worked on a range of projects across open source, freelance, and startup-oriented development, including AI-powered tools, admin dashboards, and real-time web platforms. I value clear problem-solving, thoughtful architecture, and building solutions that align with real business needs.
                 </p>
-              </div>
-              
-              {/* Key Highlights */}
-              <div className="grid grid-cols-2 gap-4 pt-6">
-                <div className="bg-white p-4 rounded-lg shadow-sm border border-slate-200">
-                  <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <span className="font-medium text-slate-700">Available for opportunities</span>
-                  </div>
-                </div>
-                <div className="bg-white p-4 rounded-lg shadow-sm border border-slate-200">
-                  <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                    <span className="font-medium text-slate-700">Remote work ready</span>
-                  </div>
-                </div>
               </div>
               
               {/* Contact Info */}
