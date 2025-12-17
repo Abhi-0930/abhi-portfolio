@@ -255,12 +255,12 @@ const Skills = () => {
     {
       title: "Databases & Storage",
       icon: <Database className="w-6 h-6" />,
-      color: "from-green-500 to-emerald-500",
-      bgColor: "from-green-50 to-emerald-50",
-      borderColor: "border-green-200",
-      skillColor: "text-green-600",
-      skillBg: "bg-green-50",
-      skillBorder: "border-green-200",
+      color: "from-teal-500 to-cyan-500",
+      bgColor: "from-teal-50 to-cyan-50",
+      borderColor: "border-teal-200",
+      skillColor: "text-teal-700",
+      skillBg: "bg-white",
+      skillBorder: "border-teal-300",
       skills: ["MongoDB", "PostgreSQL", "Cloudinary"]
     },
     {
