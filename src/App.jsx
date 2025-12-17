@@ -640,7 +640,7 @@ const Achievements = () => {
   const achievements = [
     {
       title: "Top Performer — VisionAVA Hackathon (Generative AI Track)",
-      organization: "Anurag University",
+      organization: "",
       year: "2025",
       description: "Recognized for building an AI-powered healthcare application integrating full-stack development with NLP and generative AI, evaluated for innovation, practical impact, and technical execution.",
       icon: <Award className="w-6 h-6" />,
@@ -692,8 +692,12 @@ const Achievements = () => {
                       {achievement.title}
                     </h3>
                     <div className="flex flex-wrap items-center gap-2 text-slate-600">
-                      <span className="font-semibold text-slate-700">{achievement.organization}</span>
-                      <span className="text-slate-400">•</span>
+                      {achievement.organization && (
+                        <>
+                          <span className="font-semibold text-slate-700">{achievement.organization}</span>
+                          <span className="text-slate-400">•</span>
+                        </>
+                      )}
                       <span>{achievement.year}</span>
                     </div>
                   </div>
