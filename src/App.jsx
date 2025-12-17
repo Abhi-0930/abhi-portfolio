@@ -562,111 +562,71 @@ const Experience = () => {
 // Freelancing & Mentoring Section Component
 const Freelancing = () => {
   return (
-    <section id="freelancing" className="py-20 bg-slate-50">
+    <section id="freelancing" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-800 mb-4">
-            Freelancing & Mentoring
+            Freelance & Mentoring Experience
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Empowering clients and students through professional web development services and comprehensive technical training.
-          </p>
         </div>
         
         <div className="max-w-5xl mx-auto">
-          {/* Main Card */}
-          <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 md:p-10">
-            {/* Header */}
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
-              <div className="flex items-center gap-4 mb-4 md:mb-0">
-                <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-4 rounded-xl shadow-lg">
-                  <Briefcase className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-slate-800">
-                    Freelance Web Developer & Mentor
+          <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 hover:border-blue-300 transform hover:-translate-y-1">
+            <div className="flex items-start gap-6">
+              {/* Icon */}
+              <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-4 rounded-xl text-white shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                <Briefcase className="w-6 h-6" />
+              </div>
+              
+              {/* Content */}
+              <div className="flex-1">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                    Freelance Full-Stack Developer & Technical Mentor
                   </h3>
-                  <div className="flex items-center gap-2 mt-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-purple-600 font-semibold">Ongoing</span>
+                  <div className="flex flex-wrap items-center gap-2 text-slate-600">
+                    <span>Sep 2023 – Present</span>
+                    <span className="text-slate-400">•</span>
+                    <span>Remote</span>
                   </div>
                 </div>
-              </div>
-            </div>
-            
-            {/* Description */}
-            <div className="space-y-6 mb-8">
-              <p className="text-lg text-slate-600 leading-relaxed">
-                As a Freelance Web Developer and Cybersecurity Trainer, I deliver professional web solutions and mentorship to clients and learners across the globe. I specialize in building secure, scalable full-stack applications using the MERN stack (MongoDB, Express.js, React.js, Node.js) with a strong focus on performance, reliability, and security.
-              </p>
-              
-              <p className="text-lg text-slate-600 leading-relaxed">
-                My freelance work includes developing authentication systems, real-time applications, and API-driven platforms featuring live order tracking, chat functionality, and secure payment integrations. I also founded and managed Arihs Tour, an affiliate-based flight booking platform where I integrated Trip.com APIs to automate ticket sales and streamline booking workflows.
-              </p>
-              
-              <p className="text-lg text-slate-600 leading-relaxed">
-                In parallel, I've mentored over <span className="font-semibold text-blue-600">30 students</span> in cybersecurity and full-stack development, guiding them through real-world projects, hands-on exercises, and problem-solving approaches that build both technical skill and confidence.
-              </p>
-            </div>
-            
-            {/* Professional Focus */}
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border border-blue-100 mb-8">
-              <h4 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
-                <Brain className="w-5 h-5 text-purple-600" />
-                Professional Focus
-              </h4>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
-                  <p className="text-slate-700 leading-relaxed">
-                    Building secure, high-performance full-stack applications with real-time features and API integrations.
+                
+                {/* Description */}
+                <div className="space-y-4 mb-8">
+                  <p className="text-lg text-slate-600 leading-relaxed">
+                    I work with startups, founders, and individual clients to design and build secure, production-ready web applications. My work focuses on full-stack development using the MERN stack, delivering scalable systems with clean architecture, reliable APIs, and real-world features.
+                  </p>
+                  
+                  <p className="text-lg text-slate-600 leading-relaxed">
+                    My freelance projects include authentication systems, admin dashboards, real-time workflows, and payment-integrated applications. I've also built API-driven platforms, including an affiliate-based flight booking system integrating third-party services to automate business workflows.
+                  </p>
+                  
+                  <p className="text-lg text-slate-600 leading-relaxed">
+                    Alongside development work, I mentor aspiring developers in full-stack development and application security fundamentals, guiding them through hands-on projects, real-world problem solving, and best practices used in production environments.
                   </p>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full mt-2"></div>
-                  <p className="text-slate-700 leading-relaxed">
-                    Providing hands-on mentorship in cybersecurity, OWASP fundamentals, and practical web development.
-                  </p>
+                
+                {/* Focus Areas */}
+                <div className="pt-6 border-t border-slate-200">
+                  <h4 className="text-xl font-bold text-slate-800 mb-4">
+                    Focus Areas
+                  </h4>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <div className="mt-2 w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex-shrink-0"></div>
+                      <span className="text-slate-600 leading-relaxed">Full-stack web applications with authentication, APIs, and real-time features</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="mt-2 w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex-shrink-0"></div>
+                      <span className="text-slate-600 leading-relaxed">Security-aware development using OWASP principles</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="mt-2 w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex-shrink-0"></div>
+                      <span className="text-slate-600 leading-relaxed">Practical mentoring through project-based learning</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
-            </div>
-            
-            {/* Skills & Technologies */}
-            <div className="bg-gradient-to-r from-slate-50 to-blue-50 p-6 rounded-xl">
-              <h4 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
-                <Code className="w-5 h-5 text-purple-600" />
-                Key Skills & Technologies
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  'React.js', 'Node.js', 'Express.js', 'MongoDB', 'Next.js', 'JWT Authentication',
-                  'REST APIs', 'Socket.io', 'Stripe Payments', 'Figma', 'Docker',
-                  'Git/GitHub', 'Cybersecurity (OWASP)', 'Ethical Hacking', 'SOC Operations'
-                ].map((skill, index) => (
-                  <span 
-                    key={index}
-                    className="bg-white text-blue-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm border border-blue-100 hover:shadow-md hover:scale-105 transition-all duration-300"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-          
-          {/* Stats Cards */}
-          <div className="grid md:grid-cols-3 gap-6 mt-8">
-            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">30+</div>
-              <div className="text-slate-600 font-medium">Students Mentored</div>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center">
-              <div className="text-4xl font-bold text-purple-600 mb-2">Multiple</div>
-              <div className="text-slate-600 font-medium">Client Projects</div>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center">
-              <div className="text-4xl font-bold text-pink-600 mb-2">MERN</div>
-              <div className="text-slate-600 font-medium">Stack Specialist</div>
             </div>
           </div>
         </div>
