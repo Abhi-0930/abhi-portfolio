@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Download, ExternalLink, Github, Linkedin, Mail, Phone, MapPin, Code, Database, Shield, Brain, Award, Calendar, ArrowRight, Menu, X, Server, Briefcase, Users, Monitor, Wrench, Lock, FileCode, Globe, Key, Cloud, Terminal, Layers } from 'lucide-react';
-import { SiReact, SiNextdotjs, SiJavascript, SiHtml5, SiCss3, SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiGit, SiGithub, SiPostman, SiLinux, SiDocker } from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiJavascript, SiHtml5, SiCss3, SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiGit, SiGithub, SiPostman, SiLinux, SiDocker, SiInstagram } from 'react-icons/si';
 import resume from './assets/MyResume.pdf'
 import myimg from './assets/myimg.jpg'
 
@@ -742,128 +742,165 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 text-slate-800 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-full opacity-20" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f1f5f9' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}></div>
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-blue-200/40 to-purple-200/40 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-gradient-to-tr from-purple-200/40 to-pink-200/40 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10">
+    <section id="contact" className="py-20 bg-white">
+      <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-slate-800 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold text-slate-800 mb-4">
             Let's Work Together
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Ready to bring your ideas to life? I'm always excited to collaborate on innovative projects 
-            and create amazing digital experiences.
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            I work with startups, founders, and teams to build secure, scalable web applications and production-ready digital systems. If you're looking for someone who can design, build, and deliver reliable software, let's talk.
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-3xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                Get In Touch
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Left Column - Contact Info & How I Can Help */}
+            <div className="space-y-8">
+              {/* Contact Section */}
+              <div className="bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl p-8 border border-slate-200">
+                <h3 className="text-2xl font-bold text-slate-800 mb-6">
+                  Contact
+                </h3>
+                <div className="space-y-5">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-3 rounded-lg text-white shadow-md flex-shrink-0">
+                      <Mail className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-slate-700 mb-1">Email</div>
+                      <a href="mailto:abhishek.j3094@gmail.com" className="text-slate-600 hover:text-blue-600 transition-colors duration-300">
+                        abhishek.j3094@gmail.com
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-3 rounded-lg text-white shadow-md flex-shrink-0">
+                      <MapPin className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-slate-700 mb-1">Location</div>
+                      <div className="text-slate-600">Hyderabad, India (Remote-friendly)</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* How I Can Help */}
+              <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8 border border-slate-200">
+                <h3 className="text-2xl font-bold text-slate-800 mb-6">
+                  How I Can Help
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <div className="mt-2 w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex-shrink-0"></div>
+                    <span className="text-slate-600 leading-relaxed">Full-stack web application development</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-2 w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex-shrink-0"></div>
+                    <span className="text-slate-600 leading-relaxed">Secure authentication, APIs, and real-time systems</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-2 w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex-shrink-0"></div>
+                    <span className="text-slate-600 leading-relaxed">Product-focused development for startups and founders</span>
+                  </li>
+                </ul>
+              </div>
+              
+              {/* Social Links */}
+              <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 border border-slate-200">
+                <h3 className="text-2xl font-bold text-slate-800 mb-6">
+                  Connect With Me
+                </h3>
+                <div className="flex flex-wrap gap-4">
+                  <a 
+                    href="https://www.linkedin.com/in/abhishek-jujjuvarapu-556899276" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md"
+                  >
+                    <Linkedin className="w-6 h-6 text-white group-hover:animate-pulse" />
+                  </a>
+                  <a 
+                    href="https://github.com/Abhi-0930/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md"
+                  >
+                    <Github className="w-6 h-6 text-white group-hover:animate-pulse" />
+                  </a>
+                  <a 
+                    href="mailto:abhishek.j3094@gmail.com" 
+                    className="group bg-gradient-to-r from-pink-600 to-red-600 hover:from-pink-700 hover:to-red-700 p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md"
+                  >
+                    <Mail className="w-6 h-6 text-white group-hover:animate-pulse" />
+                  </a>
+                  <a 
+                    href="tel:+916302160783" 
+                    className="group bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md"
+                  >
+                    <Phone className="w-6 h-6 text-white group-hover:animate-pulse" />
+                  </a>
+                  <a 
+                    href="#" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md"
+                  >
+                    <SiInstagram className="w-6 h-6 text-white group-hover:animate-pulse" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            {/* Right Column - Contact Form */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200">
+              <h3 className="text-2xl font-bold text-slate-800 mb-2">
+                Send a Message
               </h3>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                Whether you have a project in mind, want to discuss opportunities, or just want to say hello, 
-                I'd love to hear from you. Let's create something amazing together!
+              <p className="text-slate-600 mb-6">
+                Use the form below to share details about your project or opportunity. I usually respond within 24–48 hours.
               </p>
-            </div>
-            
-            {/* Contact Details */}
-            <div className="space-y-6">
-              <div className="group flex items-center gap-4 p-4 bg-white/60 backdrop-blur-sm rounded-xl hover:bg-white/80 transition-all duration-300 shadow-lg">
-                <div className="bg-gradient-to-r from-purple-500 to-blue-500 p-3 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                  <Mail className="w-6 h-6 text-white" />
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    required
+                    className="w-full bg-slate-50 text-slate-800 placeholder-slate-500 px-5 py-3.5 rounded-xl border border-slate-200 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-all duration-300"
+                    value={formData.name}
+                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  />
                 </div>
                 <div>
-                  <div className="text-sm text-purple-600 font-medium">Email</div>
-                  <div className="text-slate-800 font-semibold">abhishek.j3094@gmail.com</div>
-                </div>
-              </div>
-              
-              <div className="group flex items-center gap-4 p-4 bg-white/60 backdrop-blur-sm rounded-xl hover:bg-white/80 transition-all duration-300 shadow-lg">
-                <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-3 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                  <Phone className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <div className="text-sm text-purple-600 font-medium">Phone</div>
-                  <div className="text-slate-800 font-semibold">+91 63021 60783</div>
-                </div>
-              </div>
-              
-              <div className="group flex items-center gap-4 p-4 bg-white/60 backdrop-blur-sm rounded-xl hover:bg-white/80 transition-all duration-300 shadow-lg">
-                <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-3 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                  <MapPin className="w-6 h-6 text-white" />
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    required
+                    className="w-full bg-slate-50 text-slate-800 placeholder-slate-500 px-5 py-3.5 rounded-xl border border-slate-200 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-all duration-300"
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  />
                 </div>
                 <div>
-                  <div className="text-sm text-purple-600 font-medium">Location</div>
-                  <div className="text-slate-800 font-semibold">Hyderabad, India</div>
+                  <textarea
+                    placeholder="Message"
+                    rows="6"
+                    required
+                    className="w-full bg-slate-50 text-slate-800 placeholder-slate-500 px-5 py-3.5 rounded-xl border border-slate-200 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-all duration-300 resize-none"
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                  ></textarea>
                 </div>
-              </div>
-            </div>
-            
-            {/* Social Links */}
-            <div>
-              <h4 className="text-lg font-semibold text-slate-800 mb-4">Connect With Me</h4>
-              <div className="flex gap-4">
-                <a href="https://www.linkedin.com/in/abhishek-jujjuvarapu-556899276" className="group bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md">
-                  <Linkedin className="w-6 h-6 text-white group-hover:animate-pulse" />
-                </a>
-                <a href="https://github.com/Abhi-0930/" className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md">
-                  <Github className="w-6 h-6 text-white group-hover:animate-pulse" />
-                </a>
-                <a href="mailto:abhishek.j3094@gmail.com" className="group bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 p-4 rounded-xl transition-all duration-300 transform hover:scale-110 hover:shadow-lg shadow-md">
-                  <Mail className="w-6 h-6 text-white group-hover:animate-pulse" />
-                </a>
-              </div>
-            </div>
-          </div>
-          
-          {/* Contact Form */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-xl">
-            <h3 className="text-2xl font-bold text-slate-800 mb-6">Send a Message</h3>
-            <div className="space-y-6">
-              <div>
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full bg-white/60 text-slate-800 placeholder-slate-500 px-6 py-4 rounded-xl border border-slate-200 focus:border-purple-400 focus:outline-none transition-all duration-300 backdrop-blur-sm"
-                  value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
-                />
-              </div>
-              <div>
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  className="w-full bg-white/60 text-slate-800 placeholder-slate-500 px-6 py-4 rounded-xl border border-slate-200 focus:border-purple-400 focus:outline-none transition-all duration-300 backdrop-blur-sm"
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                />
-              </div>
-              <div>
-                <textarea
-                  placeholder="Your Message"
-                  rows="5"
-                  className="w-full bg-white/60 text-slate-800 placeholder-slate-500 px-6 py-4 rounded-xl border border-slate-200 focus:border-purple-400 focus:outline-none transition-all duration-300 backdrop-blur-sm resize-none"
-                  value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
-                ></textarea>
-              </div>
-              <button
-                onClick={handleSubmit}
-                className="w-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white py-4 px-8 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-3 group shadow-lg"
-              >
-                <span>Send Message</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
+                <button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-4 px-8 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-3 group shadow-lg"
+                >
+                  <span>Send Message</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -871,7 +908,7 @@ const Contact = () => {
         {/* Footer */}
         <div className="mt-20 pt-8 border-t border-slate-200 text-center">
           <p className="text-slate-500">
-            © 2025 Abhishek. All rights reserved. 
+            © 2025 Abhishek. All rights reserved.
           </p>
         </div>
       </div>
