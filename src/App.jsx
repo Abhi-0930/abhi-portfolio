@@ -367,36 +367,39 @@ const Projects = () => {
       category: "Full-Stack • AI",
       description: "Built a production-ready AI-driven mental health support platform with conversational assistance, sentiment awareness, and secure data handling.",
       features: [
-        "Designed full-stack architecture with secure authentication and protected user data flows",
+        "Designed a full-stack architecture with secure authentication and protected user data flows",
         "Integrated LLM-based conversational logic with contextual memory and response handling",
-        "Implemented backend APIs for chat history, session management, and analytics",
-        "Focused on privacy-aware design and application security best practices"
+        "Implemented Redis-based caching for chat sessions and frequently accessed conversation data to improve response speed and reduce database load",
+        "Developed backend APIs for chat history, session management, and analytics workflows",
+        "Focused on privacy-aware system design and application security best practices"
       ],
-      tech: ["React", "Node.js", "Python", "Flask", "MongoDB", "OpenAI API"]
+      tech: ["React", "Node.js", "Python", "Flask", "MongoDB", "Redis", "OpenAI API"]
     },
     {
       title: "LuxeStore — Full-Stack E-Commerce Platform",
       category: "Full-Stack",
       description: "Developed a scalable e-commerce system with user and admin dashboards, real-time cart management, and secure payment processing.",
       features: [
-        "Built role-based authentication with Google OAuth and JWT",
-        "Implemented Stripe payment flow and order lifecycle management",
+        "Built role-based authentication using Google OAuth and JWT",
+        "Implemented Stripe payment workflows and order lifecycle management",
         "Designed admin workflows for product, order, and user management",
-        "Optimized frontend performance and backend API reliability"
+        "Optimized frontend performance and backend API reliability for production use",
+        "Containerized the application using Docker and structured it for Kubernetes-based deployment"
       ],
-      tech: ["React", "Node.js", "Express", "MongoDB", "Stripe", "Tailwind CSS"]
+      tech: ["React", "Node.js", "Express", "MongoDB", "Stripe", "Tailwind CSS", "Docker", "Kubernetes"]
     },
     {
       title: "Bite Buzz — Food Delivery Platform",
       category: "Full-Stack",
       description: "End-to-end food delivery application supporting restaurant management, real-time order tracking, and customer workflows.",
       features: [
-        "Implemented real-time order status updates and admin dashboards",
+        "Implemented real-time order status updates and admin dashboards using WebSockets",
         "Built secure APIs for order creation, tracking, and updates",
-        "Integrated payment processing and role-based access control",
-        "Designed scalable backend services for concurrent usage"
+        "Used Redis for caching order state and session data to enable fast real-time updates",
+        "Integrated Kafka for event-driven order status changes and asynchronous notification handling",
+        "Designed scalable backend services to handle concurrent users and orders"
       ],
-      tech: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"]
+      tech: ["React", "Node.js", "MongoDB", "Redis", "Kafka", "Stripe", "Tailwind CSS"]
     },
     {
       title: "NeuroScan AI — Alzheimer's Detection Platform",
@@ -405,20 +408,20 @@ const Projects = () => {
       features: [
         "Built ML inference pipelines for MRI-based predictions",
         "Integrated AI insights with user-friendly visual dashboards",
-        "Designed secure backend services for medical data handling",
-        "Focused on performance and reliability for AI-driven workflows"
+        "Designed secure backend services for handling sensitive medical data",
+        "Focused on performance, reliability, and scalable AI-driven workflows"
       ],
       tech: ["Python", "TensorFlow", "FastAPI", "PostgreSQL", "Gemini API"]
     },
     {
       title: "Resume AI — AI Resume Builder",
-      category: "Automation & AI",
+      category: "Automation • AI",
       description: "AI-powered resume generation and tailoring platform for job-specific optimization.",
       features: [
-        "Implemented resume parsing and job description matching logic",
-        "Built PDF export and formatting workflows",
+        "Implemented resume parsing and job description matching logic using LLMs",
+        "Built PDF export and formatting workflows for professional resumes",
         "Designed scalable backend APIs for AI processing",
-        "Deployed end-to-end system with cloud-ready architecture"
+        "Deployed the application with cloud-ready architecture and production configuration"
       ],
       tech: ["Next.js", "MongoDB", "OpenAI API", "Tailwind CSS"]
     }
