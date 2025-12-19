@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Download, ExternalLink, Github, Linkedin, Mail, Phone, MapPin, Code, Database, Shield, Brain, Award, Calendar, ArrowRight, Menu, X, Server, Briefcase, Users, Monitor, Wrench, Lock, FileCode, Globe, Key, Cloud, Terminal, Layers, CheckCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-import { SiReact, SiNextdotjs, SiJavascript, SiHtml5, SiCss3, SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiGit, SiGithub, SiPostman, SiLinux, SiDocker } from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiJavascript, SiHtml5, SiCss3, SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiGit, SiGithub, SiPostman, SiLinux, SiDocker, SiSocketdotio, SiRedis, SiApachekafka, SiKubernetes } from 'react-icons/si';
 import resume from './assets/MyResume.pdf'
 import myimg from './assets/myimg.jpg'
 
@@ -202,18 +202,22 @@ const Skills = () => {
       "Node.js": <SiNodedotjs className="w-5 h-5" />,
       "Express.js": <SiExpress className="w-5 h-5" />,
       "REST APIs": <Globe className="w-5 h-5" />,
+      "Socket.io": <SiSocketdotio className="w-5 h-5" />,
       "JWT Authentication": <Key className="w-5 h-5" />,
+      "Role-Based Access Control": <Lock className="w-5 h-5" />,
       "MongoDB": <SiMongodb className="w-5 h-5" />,
       "PostgreSQL": <SiPostgresql className="w-5 h-5" />,
-      "Cloudinary": <Cloud className="w-5 h-5" />,
-      "Web Application Security (OWASP Top 10)": <Shield className="w-5 h-5" />,
-      "Secure Authentication": <Lock className="w-5 h-5" />,
-      "Access Control": <Shield className="w-5 h-5" />,
+      "Redis": <SiRedis className="w-5 h-5" />,
+      "Kafka": <SiApachekafka className="w-5 h-5" />,
+      "Docker": <SiDocker className="w-5 h-5" />,
+      "Kubernetes": <SiKubernetes className="w-5 h-5" />,
+      "Linux": <SiLinux className="w-5 h-5" />,
+      "Web Application Security": <Shield className="w-5 h-5" />,
+      "OWASP Top 10": <Shield className="w-5 h-5" />,
+      "Vulnerability Assessment": <Shield className="w-5 h-5" />,
       "Git": <SiGit className="w-5 h-5" />,
       "GitHub": <SiGithub className="w-5 h-5" />,
-      "Postman": <SiPostman className="w-5 h-5" />,
-      "Linux": <SiLinux className="w-5 h-5" />,
-      "Docker": <SiDocker className="w-5 h-5" />
+      "Postman": <SiPostman className="w-5 h-5" />
     };
     return iconMap[skill] || <Code className="w-5 h-5" />;
   };
@@ -239,10 +243,10 @@ const Skills = () => {
       skillColor: "text-purple-600",
       skillBg: "bg-purple-50",
       skillBorder: "border-purple-200",
-      skills: ["Node.js", "Express.js", "REST APIs", "JWT Authentication"]
+      skills: ["Node.js", "Express.js", "REST APIs", "Socket.io", "JWT Authentication", "Role-Based Access Control"]
     },
     {
-      title: "Databases & Storage",
+      title: "Databases & Caching",
       icon: <Database className="w-6 h-6" />,
       color: "from-teal-500 to-cyan-500",
       bgColor: "from-teal-50 to-cyan-50",
@@ -250,7 +254,29 @@ const Skills = () => {
       skillColor: "text-teal-700",
       skillBg: "bg-white",
       skillBorder: "border-teal-300",
-      skills: ["MongoDB", "PostgreSQL", "Cloudinary"]
+      skills: ["MongoDB", "PostgreSQL", "Redis"]
+    },
+    {
+      title: "Distributed Systems & Messaging",
+      icon: <Layers className="w-6 h-6" />,
+      color: "from-orange-500 to-red-500",
+      bgColor: "from-orange-50 to-red-50",
+      borderColor: "border-orange-200",
+      skillColor: "text-orange-600",
+      skillBg: "bg-orange-50",
+      skillBorder: "border-orange-200",
+      skills: ["Kafka"]
+    },
+    {
+      title: "DevOps & Infrastructure",
+      icon: <Terminal className="w-6 h-6" />,
+      color: "from-green-500 to-emerald-500",
+      bgColor: "from-green-50 to-emerald-50",
+      borderColor: "border-green-200",
+      skillColor: "text-green-600",
+      skillBg: "bg-green-50",
+      skillBorder: "border-green-200",
+      skills: ["Docker", "Kubernetes", "Linux"]
     },
     {
       title: "Application Security",
@@ -261,10 +287,10 @@ const Skills = () => {
       skillColor: "text-red-600",
       skillBg: "bg-red-50",
       skillBorder: "border-red-200",
-      skills: ["Web Application Security (OWASP Top 10)", "Secure Authentication", "Access Control"]
+      skills: ["Web Application Security", "OWASP Top 10", "Vulnerability Assessment"]
     },
     {
-      title: "Tools & Platforms",
+      title: "Tools",
       icon: <Wrench className="w-6 h-6" />,
       color: "from-indigo-500 to-purple-500",
       bgColor: "from-indigo-50 to-purple-50",
@@ -272,7 +298,7 @@ const Skills = () => {
       skillColor: "text-indigo-600",
       skillBg: "bg-indigo-50",
       skillBorder: "border-indigo-200",
-      skills: ["Git", "GitHub", "Postman", "Linux", "Docker"]
+      skills: ["Git", "GitHub", "Postman"]
     }
   ];
 
